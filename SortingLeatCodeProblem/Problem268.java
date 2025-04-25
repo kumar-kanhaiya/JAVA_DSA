@@ -27,7 +27,7 @@ public class Problem268 {
                 i++;
             }
         }
-        // search for element
+        // search for element in the array 
         for(int index = 0 ; index < array.length ; index ++){
             if(array[index] != index){
                 return index;
