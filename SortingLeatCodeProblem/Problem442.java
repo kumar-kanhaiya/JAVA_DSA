@@ -49,7 +49,8 @@ public class Problem442 {
             if (array[index] != index + 1) {
                 answer.add(array[index]);
             }
-        }
+        } 
+//. 
 
         return answer;
 
