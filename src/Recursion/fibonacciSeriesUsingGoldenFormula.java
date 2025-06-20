@@ -5,10 +5,13 @@ package Recursion;
 // 1+ root 5 by 2 == time complexibility bego( 1.6180)^n
 public class fibonacciSeriesUsingGoldenFormula {
     public static void main(String[] args) {
+        for (int i = 0; i < 11; i++) {
+            System.out.println(fiboFormula(i));
+        }
 
     }
     static int fiboFormula(int n){
-       return (int)Math.pow(((1+ Math.sqrt(5)) / 2) , n) ;
+        return (int)((Math.pow(((1+ Math.sqrt(5)) / 2) , n)  - Math.pow(((1 - Math.sqrt(5)) / 2) , n)) / Math.sqrt(5));
     }
 
     // normal way
