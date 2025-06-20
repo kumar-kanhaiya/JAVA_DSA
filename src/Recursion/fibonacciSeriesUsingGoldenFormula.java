@@ -11,6 +11,7 @@ public class fibonacciSeriesUsingGoldenFormula {
 
     }
     static int fiboFormula(int n){
+        // just for demo use long as int
         return (int)((Math.pow(((1+ Math.sqrt(5)) / 2) , n)  / Math.sqrt(5)));
 //        Math.pow(((1 - Math.sqrt(5)) / 2) , n)) you can remove this because it is less dominating term
     }
