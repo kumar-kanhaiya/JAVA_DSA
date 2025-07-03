@@ -4,6 +4,7 @@ public class Pattern {
     public static void main(String[] args) {
         pattern_5(5);
     }
+// first pattern 
     public static void pattern_1(int number ){
 //    *****
 //    *****
