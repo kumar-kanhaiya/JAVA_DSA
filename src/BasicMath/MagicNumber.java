@@ -6,7 +6,9 @@ public class MagicNumber {
         int n = 6 ;
         int ans = 0;
         while( n  > 0){
-
+            ans = n & 1 ;
+            n = n >> 1 ;
         }
+
     }
 }
