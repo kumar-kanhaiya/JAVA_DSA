@@ -10,6 +10,7 @@ public class MagicNumber {
             ans = n & 1 ;
             n = n >> 1 ;
             base = base * 5 ;
+            ans += base;
         }
         System.out.println(ans);
     }
