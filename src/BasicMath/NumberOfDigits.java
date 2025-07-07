@@ -11,5 +11,8 @@ public class NumberOfDigits {
             count++;
         }
         System.out.println(count);
+
+        // Second and best formula approach
     }
+
 }
