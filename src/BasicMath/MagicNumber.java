@@ -7,10 +7,10 @@ public class MagicNumber {
         int ans = 0;
         int base = 5;
         while( n  > 0){
-            ans = n & 1 ;
+            int last = n & 1 ;
             n = n >> 1 ;
+            ans += last * base;
             base = base * 5 ;
-            ans += base;
         }
         System.out.println(ans);
     }
