@@ -11,5 +11,6 @@ public class numberOfSetBit {
             }
             number = number>>1;
         }
+        System.out.println(count);
     }
 }
