@@ -1,7 +1,8 @@
 package BasicMath;
 
-public class nthMagicNumber {
+public class MagicNumber {
     public static void main(String[] args) {
-    // find nth magic number
+    // find nth magic number :
+
     }
 }
