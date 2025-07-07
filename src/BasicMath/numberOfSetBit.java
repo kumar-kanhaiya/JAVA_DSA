@@ -14,5 +14,17 @@ public class numberOfSetBit {
         System.out.println(count);
 
         // second approach
+        System.out.println(setBits(number));
     }
+
+    public static int setBits(int n) {
+        int count = 0;
+             while (n >0){
+                 count++;
+                n -= (n & -n);
+        }
+
+        return count;
+    }
+
 }
