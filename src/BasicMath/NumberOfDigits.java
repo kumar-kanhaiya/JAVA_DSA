@@ -7,7 +7,9 @@ public class NumberOfDigits {
         int count = 0 ;
         while(n>0 ){
             int last = n & 1;
-
+            n = n >> 1;
+            count++;
         }
+        System.out.println(count);
     }
 }
