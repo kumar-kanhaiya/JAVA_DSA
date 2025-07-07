@@ -13,6 +13,10 @@ public class NumberOfDigits {
         System.out.println(count);
 
         // Second and best formula approach
+        int number = 6;
+        int base = 2 ;
+        int ans = (int) (Math.log(number) / Math.log(base)) + 1;
+        System.out.println(ans);
     }
 
 }
