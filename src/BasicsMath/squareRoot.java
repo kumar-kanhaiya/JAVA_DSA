@@ -2,7 +2,7 @@ package BasicsMath;
 
 public class squareRoot {
     public static void main(String[] args) {
-    int number = 36;
+    int number = 49;
         System.out.println(squareroot(number));
 
     }
