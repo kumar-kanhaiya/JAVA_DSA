@@ -10,6 +10,9 @@ public class isPrime {
         System.out.println(isprime(number));
     }
     static boolean isprime(int number){
+        if(number <= 1){
+            return false;
+        }
         boolean ans = true;
         for (int i = 2; i*i < number ; i++) {
             if(number%i == 0 ){
