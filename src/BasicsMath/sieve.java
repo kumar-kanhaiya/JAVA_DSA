@@ -1,6 +1,6 @@
 package BasicsMath;
 
-public class seive {
+public class sieve {
     public static void main(String[] args) {
 
     }
