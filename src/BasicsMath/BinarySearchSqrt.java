@@ -26,6 +26,15 @@ public class BinarySearchSqrt {
                 start = mid +1;
             }
         }
+        double increment = 0.1;
+        for (int i = 0; i < p ; i++) {
+            while(root * root <= n){
+                root += increment;
+            }
+
+            root -= increment;
+            increment /=10;
+        }
 
         return root;
     }
