@@ -1,4 +1,5 @@
 package BasicsMath;
+// one of the best method : ....
 
 public class BinarySearchSqrt {
     public static void main(String[] args) {
