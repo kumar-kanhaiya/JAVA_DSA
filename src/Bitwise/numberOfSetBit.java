@@ -1,4 +1,4 @@
-package BasicMath;
+package Bitwise;
 
 public class numberOfSetBit {
     public static void main(String[] args) {

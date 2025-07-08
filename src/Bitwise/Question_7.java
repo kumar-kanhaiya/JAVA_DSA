@@ -1,4 +1,4 @@
-package BasicMath;
+package Bitwise;
 
 import java.util.Scanner;
 

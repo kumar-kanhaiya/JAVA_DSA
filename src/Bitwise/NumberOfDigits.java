@@ -1,4 +1,4 @@
-package BasicMath;
+package Bitwise;
 
 public class NumberOfDigits {
     public static void main(String[] args) {

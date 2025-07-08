@@ -1,4 +1,4 @@
-package BasicMath;
+package Bitwise;
 
 public class findingNonRepeatingTerm {
     // in this question we want to find the non-repeating term in the array
