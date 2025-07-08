@@ -13,13 +13,12 @@ public class isPrime {
         if(number <= 1){
             return false;
         }
-        boolean ans = true;
+//        boolean ans = true;
         for (int i = 2; i*i < number ; i++) {
             if(number%i == 0 ){
-                ans = false;
-                break;
+                return false;
             }
         }
-        return ans;
+        return true;
     }
 }
