@@ -2,7 +2,7 @@ package BasicsMath;
 
 public class HCF {
     public static void main(String[] args) {
-        System.out.println(hcf(4,18));
+        System.out.println(hcf(105,224));
 
     }
     public static int hcf(int first , int secong ){
@@ -21,4 +21,6 @@ public class HCF {
         }
         return second;
     }
+    // second approach by using recursion
+
 }
