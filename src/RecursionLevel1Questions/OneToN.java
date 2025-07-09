@@ -3,7 +3,6 @@ package RecursionLevel1Questions;
 public class OneToN {
     public static void main(String[] args) {
         System.out.println(Printing(12, 1));
-
         printRev(12);
 
     }
