@@ -22,5 +22,10 @@ public class HCF {
         return second;
     }
     // second approach by using recursion
-
+    static int gcd(int a , int b ){
+        if(a==0 ){
+            return b;
+        }
+        return gcd(b%a , a);
+    }
 }
