@@ -2,7 +2,7 @@ package BasicsMath;
 
 public class HCF {
     public static void main(String[] args) {
-        System.out.println(hcf(105,224));
+        System.out.println(gcd(105,224));
 
     }
     public static int hcf(int first , int secong ){
