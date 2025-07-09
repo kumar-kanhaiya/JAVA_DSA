@@ -9,9 +9,10 @@ public class HCF {
         int ans = 1;
         for (int i = 1; i < min ; i++) {
             if(first%i == 0 && secong%i == 0){
-
+                ans = i;
             }
         }
+        return ans;
     }
     public static int min(int first , int second ){
         if(first < second){
