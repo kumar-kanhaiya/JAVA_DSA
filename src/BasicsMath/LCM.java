@@ -10,6 +10,7 @@ public class LCM {
         }
         return hcf(b%a,a);
     }
+
     public static int lcm(int a , int b ){
         return (a*b)/hcf(a,b);
     }
