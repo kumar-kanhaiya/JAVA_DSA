@@ -6,6 +6,7 @@ public class Question1 {
     public static void main(String[] args) {
     // printing n to 1 number using recursion
         //  simple recursive call
+        // it is done by stack memory
         Scanner input = new Scanner(System.in);
         int number ;
         System.out.print("Enter your number : " );
