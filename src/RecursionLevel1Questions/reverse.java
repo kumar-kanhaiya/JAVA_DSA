@@ -15,6 +15,5 @@ public class reverse {
         int rem = number%10;
         sum = sum*10 +rem;
         reverseNumber(number/10);
-
     }
 }
