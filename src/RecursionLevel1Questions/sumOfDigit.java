@@ -8,7 +8,7 @@ public class sumOfDigit {
         if(number < 1){
             return 0;
         }
-        int rem = number %10;
-        return rem + sum(number/10);
+
+        return (number%10) + sum(number/10);
     }
 }
