@@ -3,17 +3,18 @@ package RecursionLevel1Questions;
 public class reverse {
     public static void main(String[] args) {
     reverseNumber(123);
+        System.out.println(sum);
+
     }
-    public static void reverseNumber(int number ){
+    // first approach
+    static int sum = 0 ;
+    static void reverseNumber(int number ){
         if(number < 1 ){
-            return ;
+            return;
         }
-//        return (number%10) * 10 + reverseNumber(number/10);
-        int rem = (number%10);
-        int ans = 0;
-        ans = ans*10 +  rem ;
+        int rem = number%10;
+        sum = sum*10 +rem;
         reverseNumber(number/10);
-        System.out.print(ans);
 
     }
 }
