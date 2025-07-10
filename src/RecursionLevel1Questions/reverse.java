@@ -17,6 +17,6 @@ public class reverse {
         reverseNumber(number/10);
     }
 
-    // second approach
+
 
 }
