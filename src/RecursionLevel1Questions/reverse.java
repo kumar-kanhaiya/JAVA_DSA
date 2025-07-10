@@ -16,4 +16,6 @@ public class reverse {
         sum = sum*10 +rem;
         reverseNumber(number/10);
     }
+
+    // second approach
 }
