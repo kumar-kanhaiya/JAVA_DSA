@@ -2,7 +2,7 @@ package RecursionLevel1Questions;
 
 public class Palindrome {
     public static void main(String[] args) {
-    isPalindrome(525);
+    isPalindrome(5255);
     }
     // normal approach without recursion
     public static void isPalindrome(int number ){
