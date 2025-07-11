@@ -16,4 +16,7 @@ public class CountZeroes {
         }
         counting(number/10);
     }
+
+    // second Way
+
 }
