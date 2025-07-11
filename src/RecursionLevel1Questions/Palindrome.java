@@ -2,14 +2,7 @@ package RecursionLevel1Questions;
 
 public class Palindrome {
     public static void main(String[] args) {
-    int number = 525;
-    int reverse = rev(number);
-    if(number == reverse){
-        System.out.println("Yes! this is palindrome ");
-    }
-    else{
-        System.out.println("This is not palindrome ");
-    }
+        System.out.println(isPali(525));
     }
     // normal approach without recursion
     public static void isPalindrome(int number ){
@@ -40,5 +33,8 @@ public class Palindrome {
         }
         int rem = number%10;
         return rem * (int) Math.pow(10,digit-1) + target(number/10 , digit -1);
+    }
+    static boolean isPali(int number ){
+        return (number == rev(number));
     }
 }
