@@ -2,6 +2,8 @@ package RecursionLevel1Questions;
 
 public class CountZeroes {
     public static void main(String[] args) {
+        counting(10056);
+        System.out.println(count);
     }
     // using recursion
     static int count = 0;
