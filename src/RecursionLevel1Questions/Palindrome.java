@@ -4,7 +4,12 @@ public class Palindrome {
     public static void main(String[] args) {
     int number = 525;
     int reverse = rev(number);
-    if(n)
+    if(number == reverse){
+        System.out.println("Yes! this is palindrome ");
+    }
+    else{
+        System.out.println("This is not palindrome ");
+    }
     }
     // normal approach without recursion
     public static void isPalindrome(int number ){
