@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 public class ReturningArrayList {
     public static void main(String[] args) {
-        System.out.println(check());
+        int[] array = {3,2,1,4,4,8,6,9,};
+
+        System.out.println(check(array , 4 , 0 , new ArrayList<>()));
 
     }
     // first approach by passing argument
