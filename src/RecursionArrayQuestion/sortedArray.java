@@ -22,4 +22,6 @@ public class sortedArray {
         }
         return helper(array , start + 1);
     }
+    // second approach
+
 }
