@@ -27,5 +27,6 @@ public class sortedArray {
         if(index == array.length - 1 ){
             return true;
         }
+        return array[index] < array[index +1 ] && isSorted2(array , index + 1);
     }
 }
