@@ -18,5 +18,10 @@ public class LinearSearch {
         return check(array,target , start + 1);
     }
     // second approach
-
+    public static boolean check2(int[] array , int target , int start){
+        if(start > array.length -1 ){
+            return false ;
+        }
+        return (array[start] == target) || check2(array , target , start + 1);
+    }
 }
