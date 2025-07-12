@@ -5,8 +5,10 @@ public class sortedArray {
     // find if array is sorted or not
         // arr = {1,2,4,8,9,12}
         int[] arr = { 1,2,4,8,9,12};
-        System.out.println(isSorted(arr));
+        int[] check = {1,2,0,5,3,8,4};
 
+        System.out.println(isSorted(arr));
+        System.out.println(isSorted(check));
     }
     public static boolean isSorted(int[] array ){
         return helper(array , 0);
