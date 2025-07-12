@@ -23,5 +23,9 @@ public class sortedArray {
         return helper(array , start + 1);
     }
     // second approach
-
+    public static boolean isSorted2(int[] array , int index){
+        if(index == array.length - 1 ){
+            return true;
+        }
+    }
 }
