@@ -8,7 +8,7 @@ public class sortedArray {
         int[] check = {1,2,0,5,3,8,4};
 
         System.out.println(isSorted(arr));
-        System.out.println(isSorted(check));
+        System.out.println(isSorted2(check , 0));
     }
     public static boolean isSorted(int[] array ){
         return helper(array , 0);
