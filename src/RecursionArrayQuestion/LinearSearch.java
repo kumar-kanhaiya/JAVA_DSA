@@ -3,7 +3,8 @@ package RecursionArrayQuestion;
 public class LinearSearch {
     public static void main(String[] args) {
 // find out the indexing of target element in the array using recursion
-        int[] array
+        int[] array = {3,2,1,18,9};
+        System.out.println(check(array , 18 , 0));
     }
     public static int check(int[] array , int target , int start){
         if(start > array.length - 1){
