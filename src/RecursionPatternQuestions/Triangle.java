@@ -3,6 +3,7 @@ package RecursionPatternQuestions;
 public class Triangle {
     public static void main(String[] args) {
         trianglePattern2(5,0);
+        trianglePattern3(5,0);
 
     }
     // normal approach
@@ -31,6 +32,19 @@ public class Triangle {
 
             System.out.println(" ");
             trianglePattern2(row-1,0);
+        }
+    }
+    public static void trianglePattern3(int row , int collum  ){
+        if(row == 0){
+            return;
+        }
+        if(row > collum){
+            trianglePattern3(row , collum + 1);
+            System.out.print(" * ");
+        }
+        else {
+            trianglePattern3(row-1,0);
+            System.out.println(" ");
         }
     }
 }
