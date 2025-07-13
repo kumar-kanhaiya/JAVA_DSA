@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class RoatatedBinarySearch {
     public static void main(String[] args) {
         int[] array = {5,6,7,8,9,1,2,3};
+        System.out.println(search(array,2,0,array.length - 1));
 
 
     }
@@ -14,7 +15,7 @@ public class RoatatedBinarySearch {
             return -1;
         }
         int mid = s + (e-s)/2;
-        if(mid == target){
+        if(array[mid] == target){
             // ans found
             return mid;
         }
