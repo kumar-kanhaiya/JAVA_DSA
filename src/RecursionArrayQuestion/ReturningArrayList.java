@@ -22,5 +22,14 @@ public class ReturningArrayList {
     }
 
     // second approach return the list without passing any argument
+    public static int check(int[] array , int target , int index){
+        if(index == array.length){
+            return -1 ;
+        }
+        if(array[index] == target){
+            return index;
+        }
+        return check(array,target,index + 1 );
+    }
 
 }
