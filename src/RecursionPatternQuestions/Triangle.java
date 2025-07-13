@@ -2,7 +2,7 @@ package RecursionPatternQuestions;
 
 public class Triangle {
     public static void main(String[] args) {
-        trianglePattern(5);
+        trianglePattern2(5,0);
 
     }
     // normal approach
@@ -19,5 +19,18 @@ public class Triangle {
     }
 
     // second approach
-    public static void
+    public static void trianglePattern2(int row , int collum  ){
+        if(row == 0){
+            return;
+        }
+        if(row > collum){
+            System.out.print(" * ");
+            trianglePattern2(row , collum + 1);
+        }
+        else {
+
+            System.out.println(" ");
+            trianglePattern2(row-1,0);
+        }
+    }
 }
