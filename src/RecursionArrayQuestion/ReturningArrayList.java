@@ -17,6 +17,7 @@ public class ReturningArrayList {
         if(array[start] == target){
             list.add(start);
         }
+
         return check(array , target , start + 1 , list);
     }
 }
