@@ -5,6 +5,7 @@ public class Triangle {
         trianglePattern(5);
 
     }
+    // normal approach
     public static void trianglePattern(int number ){
         if(number == 0){
             return;
