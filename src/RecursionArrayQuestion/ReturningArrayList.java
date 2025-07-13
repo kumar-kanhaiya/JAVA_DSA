@@ -20,4 +20,7 @@ public class ReturningArrayList {
 
         return check(array , target , start + 1 , list);
     }
+
+    // second approach return the list without passing any argument
+
 }
