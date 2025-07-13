@@ -17,4 +17,7 @@ public class Triangle {
         trianglePattern(number -1 );
 
     }
+
+    // second approach
+    public static void
 }
