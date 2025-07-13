@@ -31,9 +31,10 @@ public class ReturningArrayList {
         if(array[index] == target){
             list.add(index);
         }
-        findAllIndex(array,target,index + 1 );
-        list.add(index);
+        ArrayList<Integer> ansGettingFromBelow = findAllIndex(array,target,index + 1 );
+        list.addAll(ansGettingFromBelow);
         return list;
+
     }
 
 }
