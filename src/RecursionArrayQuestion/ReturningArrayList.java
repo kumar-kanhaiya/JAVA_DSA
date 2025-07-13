@@ -7,6 +7,7 @@ public class ReturningArrayList {
         int[] array = {3,2,1,4,4,8,6,9,};
 
         System.out.println(check(array , 4 , 0 , new ArrayList<>()));
+        System.out.println(findAllIndex(array,4,0));
 
     }
     // first approach by passing argument
@@ -22,14 +23,17 @@ public class ReturningArrayList {
     }
 
     // second approach return the list without passing any argument
-    public static int check(int[] array , int target , int index){
+    public static ArrayList<Integer> findAllIndex(int[] array , int target , int index){
+        ArrayList<Integer> list = new ArrayList<>();
         if(index == array.length){
-            return -1 ;
+            return list;
         }
         if(array[index] == target){
-            return index;
+            list.add(index);
         }
-        return check(array,target,index + 1 );
+        findAllIndex(array,target,index + 1 );
+        list.add(index);
+        return list;
     }
 
 }
