@@ -4,13 +4,14 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-    int[] array = {8,3,4,12,5,6};
-    sorting(array , (array.length)/2 , 0  );
-    sorting(array , (array.length -1 ), (array.length - 1)/2 + 1  );
-        System.out.println(Arrays.toString(array));
+    int[] array = {5,4,3,2,1};
+    array = mergeSort(array);
+//    sorting(array , (array.length)/2 , 0  );
+//    sorting(array , (array.length -1 ), (array.length - 1)/2 + 1  );
+//        System.out.println(Arrays.toString(array));
         int[] arr = {8,9,10,12};
         int[] prr = {1,2,3,4};
-
+        System.out.println(Arrays.toString(array));
         System.out.println(Arrays.toString(merge(arr,prr)));
     }
     public static void sorting(int[] array , int row , int collom){
@@ -40,7 +41,7 @@ public class MergeSort {
 
         int mid = array.length /2 ;
         int[] left = mergeSort(Arrays.copyOfRange(array,0,mid));
-        int[] right = mergeSort(Arrays.copyOfRange(array,mid + 1 , array.length));
+        int[] right = mergeSort(Arrays.copyOfRange(array,mid , array.length));
 
         return merge(left,right);
 
