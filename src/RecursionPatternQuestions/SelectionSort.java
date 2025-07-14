@@ -19,8 +19,9 @@ public class SelectionSort {
             selectionSort(array,r, c+1);
         }
         else{
-            selectionSort(array,r - 1 , 0);
+            selectionSort(array , r-1 , 0);
         }
+
 
     }
 
@@ -33,12 +34,12 @@ public class SelectionSort {
     public static int maxIndex(int[] array , int end){
         int ans = 0 ;
         int max = -1;
-        for (int i = 0; i < end ; i++) {
-            if(max <array[i]){
-                max = i;
+        for (int i = 0; i <= end ; i++) {
+            if(max < array[i]){
+                max = array[i];
             }
         }
-        for (int i = 0; i <end ; i++) {
+        for (int i = 0; i <=end ; i++) {
             if(array[i] == max){
                 ans = i ;
                 break;
