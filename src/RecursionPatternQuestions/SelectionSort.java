@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SelectionSort {
     public static void main(String[] args) {
         int[] array = {1,8,7,2,9,5,4};
-        selectionSort(array, array.length - 1 ,0  );
+        selectionSort2(array, array.length  ,0 ,0 );
         System.out.println(Arrays.toString(array));
 
     }
@@ -46,5 +46,26 @@ public class SelectionSort {
             }
         }
         return ans;
+    }
+
+    // crazy approach
+    public static void selectionSort2(int[] array , int r , int c , int max){
+        if(r == 0){
+            return;
+        }
+        if(r > c){
+            if(array[c] > array[max]){
+                selectionSort2(array , r , c+1 , c);
+            }
+            else{
+                selectionSort2(array , r , c+1 ,max);
+            }
+        }
+        else{
+            int temp = array[max];
+            array[max] = array[r-1];
+            array[r-1] = temp;
+            selectionSort2(array,r-1,0,0);
+        }
     }
 }
