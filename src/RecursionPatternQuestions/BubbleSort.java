@@ -5,19 +5,23 @@ import java.util.Arrays;
 public class BubbleSort {
     public static void main(String[] args) {
     int[] array = {4,3,2,1};
-    bubbleSort(array,0);
+    bubbleSort(array, array.length - 1,  0);
         System.out.println(Arrays.toString(array));
 
     }
-    static void bubbleSort(int[] array , int start ){
-        if(start >= array.length - 1){
+    static void bubbleSort(int[] array , int row , int collumn){
+        if(row == 0){
             return;
         }
-        if(array[start] > array[start+1] && start < array.length-1){
-            swap(array,start,start + 1);
-            bubbleSort(array,start );
+        if(collumn < row) {
+            if (array[collumn] > array[collumn + 1]) {
+                swap(array, collumn, collumn + 1);
+            }
+                bubbleSort(array, row, collumn + 1);
         }
-        bubbleSort(array,start+1);
+        else{
+            bubbleSort(array , row -1 ,0);
+        }
 
     }
     public static void swap(int[] array , int first , int second ){
