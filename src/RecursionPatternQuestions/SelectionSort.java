@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] array = {4,3,2,1};
+        int[] array = {1,8,7,2,9,5,4};
         selectionSort(array, array.length - 1 ,0  );
         System.out.println(Arrays.toString(array));
 
@@ -15,7 +15,7 @@ public class SelectionSort {
         }
         if(c < r){
             int max = maxIndex(array, array.length - c - 1);
-            swap(array,c, array.length - c - 1);
+            swap(array,max, array.length - c - 1);
             selectionSort(array,r, c+1);
         }
         else{
