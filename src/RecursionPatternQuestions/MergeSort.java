@@ -5,9 +5,13 @@ import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
     int[] array = {8,3,4,12,5,6};
-    sorting(array , (array.length - 1)/2 , 0  );
-    sorting(array , array.length - 1, (array.length - 1)/2 + 1  );
+    sorting(array , (array.length)/2 , 0  );
+    sorting(array , (array.length -1 ), (array.length - 1)/2 + 1  );
         System.out.println(Arrays.toString(array));
+        int[] arr = {8,9,10,12};
+        int[] prr = {1,2,3,4};
+
+        System.out.println(Arrays.toString(merge(arr,prr)));
     }
     public static void sorting(int[] array , int row , int collom){
         if(row == 0){
@@ -28,4 +32,50 @@ public class MergeSort {
         array[first] =array[second];
         array[second] = temp;
     }
+
+    static int[] mergeSort(int[] array ){
+        if(array.length == 1){
+            return array;
+        }
+
+        int mid = array.length /2 ;
+        int[] left = mergeSort(Arrays.copyOfRange(array,0,mid));
+        int[] right = mergeSort(Arrays.copyOfRange(array,mid + 1 , array.length));
+
+        return merge(left,right);
+
+    }
+
+    private static int[] merge(int[] first, int[] second) {
+        int[] ans = new int[first.length + second.length];
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i< first.length && j< second.length) {
+            if (first[i] < second[j]) {
+                ans[k] = first[i];
+                i++;
+            }
+            else{
+                ans[k] = second[j];
+                j++;
+
+            }
+            k++;
+        }
+
+        // it may be possible that one of the array is not complete
+        while(i< first.length){
+            ans[k] = first[i];
+            i++;
+            k++;
+        }
+        while(j< second.length){
+            ans[k] = second[j];
+            j++;
+            k++;
+        }
+        return ans;
+    }
+
 }
