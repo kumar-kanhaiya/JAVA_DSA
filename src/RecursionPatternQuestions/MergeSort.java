@@ -90,7 +90,7 @@ public class MergeSort {
 
         mergeInPlace(array , start , mid , end );
     }
-    static int[] mergeInPlace(int[] array , int start , int mid , int end ){
+    static void mergeInPlace(int[] array , int start , int mid , int end ){
         int[] mix = new int[end - start];
         int i = start;
         int j = mid;
@@ -117,7 +117,9 @@ public class MergeSort {
             k++;
         }
 
-        return mix;
+        for (int l = 0; l < mix.length ; l++) {
+            array[start + l ] = mix[l];
+        }
 
     }
 }
