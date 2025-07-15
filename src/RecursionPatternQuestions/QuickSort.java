@@ -7,5 +7,10 @@ public class QuickSort {
     2. corner element
     3. pick the middle element
      */
+        /* worst case and best case
+        worst case is maximum or minimum present on starting or ending
+        best case is middle one
+         */
+
     }
 }
