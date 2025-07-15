@@ -93,6 +93,25 @@ public class MergeSort {
     static int[] mergeInPlace(int[] array , int start , int mid , int end ){
         int[] mix = new int[end - start];
         int i = start;
+        int j = mid;
+        int k = 0;
+        while(i<mid && j < end ){
+            if(array[i] < array[j]){
+                array[k] = array[i];
+                i++;
+            }
+            else{
+                array[k] = array[j];
+                j++;
+            }
+            k++;
+        }
+        while(i < (mid - start)){
+            array[k] = array[i];
+            i++;
+            k++;
+        }
+        while
 
     }
 }
