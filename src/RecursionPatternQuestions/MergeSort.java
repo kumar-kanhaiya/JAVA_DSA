@@ -106,12 +106,12 @@ public class MergeSort {
             }
             k++;
         }
-        while(i < (mid - start)){
+        while(i < mid){
             array[k] = array[i];
             i++;
             k++;
         }
-        while( j < (end - mid)){
+        while( j < end ){
             array[k] =array[j];
             j++;
             k++;
