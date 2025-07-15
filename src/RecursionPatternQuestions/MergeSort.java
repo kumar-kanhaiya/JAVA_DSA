@@ -80,5 +80,19 @@ public class MergeSort {
     }
 
     // in place algorithm
+    public static void mergeSort2(int[] array , int start , int end ){
+        if(end - start == 1){
+            return;
+        }
+        int mid = start + (end - start)/2;
+        mergeSort2(array , 0 , mid);
+        mergeSort2(array , mid , array.length);
 
+        mergeInPlace(array , start , mid , end );
+    }
+    static int[] mergeInPlace(int[] array , int start , int mid , int end ){
+        int[] mix = new int[end - start];
+        int i = start;
+
+    }
 }
