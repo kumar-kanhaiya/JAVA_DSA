@@ -111,7 +111,13 @@ public class MergeSort {
             i++;
             k++;
         }
-        while
+        while( j < (end - mid)){
+            array[k] =array[j];
+            j++;
+            k++;
+        }
+
+        return mix;
 
     }
 }
