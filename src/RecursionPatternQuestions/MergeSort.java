@@ -4,15 +4,18 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-    int[] array = {5,4,3,2,1};
-    array = mergeSort(array);
-//    sorting(array , (array.length)/2 , 0  );
-//    sorting(array , (array.length -1 ), (array.length - 1)/2 + 1  );
+//    int[] array = {5,4,3,2,1};
+//    array = mergeSort(array);
+////    sorting(array , (array.length)/2 , 0  );
+////    sorting(array , (array.length -1 ), (array.length - 1)/2 + 1  );
+////        System.out.println(Arrays.toString(array));
+//        int[] arr = {8,9,10,12};
+//        int[] prr = {1,2,3,4};
 //        System.out.println(Arrays.toString(array));
-        int[] arr = {8,9,10,12};
-        int[] prr = {1,2,3,4};
+//        System.out.println(Arrays.toString(merge(arr,prr)));
+        int[] array = {5,4,3,2,1};
+        mergeSortInPlace(array , 0 , array.length);
         System.out.println(Arrays.toString(array));
-        System.out.println(Arrays.toString(merge(arr,prr)));
     }
     public static void sorting(int[] array , int row , int collom){
         if(row == 0){
@@ -80,13 +83,13 @@ public class MergeSort {
     }
 
     // in place algorithm
-    public static void mergeSort2(int[] array , int start , int end ){
+    public static void mergeSortInPlace(int[] array , int start , int end ){
         if(end - start == 1){
             return;
         }
-        int mid = start + (end - start)/2;
-        mergeSort2(array , 0 , mid);
-        mergeSort2(array , mid , array.length);
+        int mid = (start + end)/2;
+        mergeSortInPlace(array , start , mid);
+        mergeSortInPlace(array , mid , end);
 
         mergeInPlace(array , start , mid , end );
     }
@@ -97,22 +100,22 @@ public class MergeSort {
         int k = 0;
         while(i<mid && j < end ){
             if(array[i] < array[j]){
-                array[k] = array[i];
+                mix[k] = array[i];
                 i++;
             }
             else{
-                array[k] = array[j];
+                mix[k] = array[j];
                 j++;
             }
             k++;
         }
         while(i < mid){
-            array[k] = array[i];
+            mix[k] = array[i];
             i++;
             k++;
         }
         while( j < end ){
-            array[k] =array[j];
+            mix[k] =array[j];
             j++;
             k++;
         }
