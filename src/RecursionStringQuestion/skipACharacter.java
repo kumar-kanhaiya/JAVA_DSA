@@ -6,6 +6,7 @@ public class skipACharacter {
         String ans = "";
         remove(name , ans,0 , 'a');
         skip("" , name , 'a');
+        System.out.println(removeThing(name));
 
     }
     public static void remove(String original , String ans , int start , char target ){
@@ -31,6 +32,21 @@ public class skipACharacter {
         }
         else{
             skip(p+ch , up.substring(1) ,target);
+        }
+    }
+
+    // third approach - without passing anything
+    public static String removeThing(String str){
+        if(str.isEmpty()){
+            return "";
+        }
+        char ch = str.charAt(0);
+        if(ch == 'a'){
+            return removeThing(str.substring(1));
+        }
+        else{
+            return ch + removeThing(str.substring(1));
+
         }
     }
 
