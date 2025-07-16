@@ -11,9 +11,11 @@ public class skipACharacter {
         if(start == original.length()){
             return ans;
         }
-        if(original.charAt(start) != target){
+        if(original.charAt(start) != target){   
             ans += original.charAt(start);
         }
         return remove(original , ans, start + 1 , target);
     }
+
+    // second approach
 }
