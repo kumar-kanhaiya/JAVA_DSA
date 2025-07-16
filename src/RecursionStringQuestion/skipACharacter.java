@@ -4,17 +4,16 @@ public class skipACharacter {
     public static void main(String[] args) {
         String name = "kanhaiya";
         String ans = " ";
-        remove(name , ans,0 , 'a');
-        System.out.println(ans);
+        System.out.println(remove(name , ans,0 , 'a'));
 
     }
-    public static void remove(String original , String ans , int start , char target ){
+    public static String remove(String original , String ans , int start , char target ){
         if(start == original.length()){
-            return;
+            return ans;
         }
         if(original.charAt(start) != target){
             ans += original.charAt(start);
         }
-        remove(original , ans, start + 1 , target);
+        return remove(original , ans, start + 1 , target);
     }
 }
