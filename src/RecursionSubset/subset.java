@@ -11,9 +11,10 @@ public class subset {
 
      */
         allSubsets("" , "abc");
-        ArrayList<String > list = new ArrayList<>();
-        list = allSubsetInArrayList("" , "abc" , list,0);
+        ArrayList<String > list = subSeq("","abc");
+//        list = allSubsetInArrayList("" , "abc" , list);
         System.out.println(list);
+        System.out.println(allSubsetInArrayList("","abc",new ArrayList<>()));
     }
     public static void allSubsets(String p , String up){
         if( up.isEmpty() ){
@@ -27,22 +28,30 @@ public class subset {
 
     // adding in array list
     // 1st approach passing an list item
-    public static ArrayList<String> allSubsetInArrayList(String p , String up , ArrayList<String> list , int index ) {
+    public static ArrayList<String> allSubsetInArrayList(String p , String up , ArrayList<String> list  ) {
         if (up.isEmpty()) {
             list.add(p);
-
+            return list;
         }
-        if(index== up.length()){
+
+        char ch = up.charAt(0);
+        allSubsetInArrayList(p + ch,up.substring(1), list );
+        allSubsetInArrayList(p ,up.substring(1), list  );
+
+        return list;
+    }
+
+    // without passing an argument
+    public static ArrayList<String> subSeq(String p , String up){
+        if(up.isEmpty()){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
             return list;
         }
         char ch = up.charAt(0);
-        if (true) {
-            return allSubsetInArrayList(p + ch, up.substring(1), list,index +1 );
-
-        }
-
-        return allSubsetInArrayList(p, up.substring(1), list , index + 1);
-
-
+        ArrayList<String> left = subSeq(p + ch,up.substring(1));
+        ArrayList<String> right =subSeq(p,up.substring(1));
+        left.addAll(right);
+        return left;
     }
 }
