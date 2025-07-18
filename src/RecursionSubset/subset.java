@@ -15,6 +15,7 @@ public class subset {
 //        list = allSubsetInArrayList("" , "abc" , list);
         System.out.println(list);
         System.out.println(allSubsetInArrayList("","abc",new ArrayList<>()));
+        subSeqASCII("","abc");
     }
     public static void allSubsets(String p , String up){
         if( up.isEmpty() ){
@@ -55,4 +56,16 @@ public class subset {
         return left;
 
     }
+    // print ASCII value of the character
+    public static void subSeqASCII(String p , String up){
+        if(up.isEmpty()){
+            System.out.println(p);
+            return;
+        }
+        char ch = up.charAt(0);
+        subSeqASCII(p+ch , up.substring(1));
+        subSeqASCII(p,up.substring(1));
+        subSeqASCII(p + (ch + 0), up.substring(1));
+    }
+
 }
