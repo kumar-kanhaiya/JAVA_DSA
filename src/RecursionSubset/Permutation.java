@@ -6,6 +6,8 @@ public class Permutation {
     public static void main(String[] args) {
         permutation("","abc");
         System.out.println(permutation2("","abc",new ArrayList<String>()));
+        ArrayList<String> ans = permutation3("","abc");
+        System.out.println(ans);
 
     }
     public static void permutation(String p , String up){
@@ -37,5 +39,22 @@ public class Permutation {
 
         }
         return list;
+    }
+
+    // here is the second approach
+    public static ArrayList<String> permutation3(String p , String up){
+        if(up.isEmpty()){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+        char ch = up.charAt(0);
+        ArrayList<String> ans = new ArrayList<>();
+        for (int i = 0; i <= p.length() ; i++) {
+            String f = p.substring(0,i);
+            String s = p.substring(i,p.length());
+            ans.addAll(permutation3(f + ch + s,up.substring(1)));
+        }
+        return ans;
     }
 }
