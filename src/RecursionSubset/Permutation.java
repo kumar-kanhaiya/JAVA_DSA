@@ -18,4 +18,8 @@ public class Permutation {
             permutation(f+ch+s,up.substring(1));
         }
     }
+
+    // returning array list
+    // first approach pass the arraylist inside the function paratmeter
+
 }
