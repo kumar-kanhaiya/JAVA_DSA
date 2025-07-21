@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Leetcode17 {
     public static void main(String[] args) {
-        System.out.println(letterCombinations("12"));
+        System.out.println(letterCombinations(""));
 
     }
     public static ArrayList<String> letterCombinations(String digits) {
@@ -18,9 +18,9 @@ public class Leetcode17 {
             return list;
         }
         ArrayList<String> ans = new ArrayList<>();
-        int digit = (int) (up.charAt(0) - '0');
-        for (int i = (digit-1)*3; i < digit*3; i++) {
-            char ch = (char) ('a' +  digit);
+        int digit = up.charAt(0) - '0' - 1;
+        for (int i = (digit-1) * 3; i < digit * 3; i++) {
+            char ch = (char) ('a' +  i);
             ans.addAll(check(p+ch,up.substring(1)));
         }
         return ans;
