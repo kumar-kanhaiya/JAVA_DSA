@@ -27,6 +27,7 @@ public class DublicateItem {
             end = outer.size() - 1 ;
 
 //            for(int element : array){
+            
             int n = outer.size();
             for (int j = start; j < n; j++) {
                 List<Integer > internal = new ArrayList<>(outer.get(j));
