@@ -12,10 +12,10 @@ public class Permutation {
             return;
         }
         char ch = up.charAt(0);
-        int size = p.length() + 1;
-        for (int i = 0; i < size; i++) {
-            permutation(p+ch,up.substring(1));
-            permutation(ch+p,up.substring(1));
+        for (int i = 0; i <= p.length(); i++) {
+            String f = p.substring(0,i);
+            String s = p.substring(i,p.length());
+            permutation(f+ch+s,up.substring(1));
         }
     }
 }
