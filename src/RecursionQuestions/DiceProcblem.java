@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class DiceProcblem {
     public static void main(String[] args) {
     dice("",4);
+        System.out.println(dice3("",4));
     }
     public static void dice(String p , int target ){
         if(target == 0){
@@ -32,7 +33,7 @@ public class DiceProcblem {
 
     // here is the second approach
     public static ArrayList<String> dice3(String p , int target){
-        f(target == 0){
+        if(target == 0){
             ArrayList<String> list = new ArrayList<>();
             list.add(p);
             return list;
