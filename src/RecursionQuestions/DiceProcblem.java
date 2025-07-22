@@ -1,5 +1,7 @@
 package RecursionQuestions;
 
+import java.util.ArrayList;
+
 public class DiceProcblem {
     public static void main(String[] args) {
     dice("",4);
@@ -17,5 +19,14 @@ public class DiceProcblem {
 
     // second approach adding in array list
     // first we pass the list argument in the function or method
-
+    public static ArrayList<String> dice2(String p , int target, ArrayList<String> list){
+        if(target == 0){
+            list.add(p);
+            return list;
+        }
+        for (int i = 1; i <=6&& i<= target ; i++) {
+            dice2(p+i,target-i,list);
+        }
+        return list;
+    }
 }
