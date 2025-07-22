@@ -2,7 +2,7 @@ package RecursionQuestions;
 
 public class DiceProcblem {
     public static void main(String[] args) {
-
+    dice("",4);
     }
     public static void dice(String p , int target ){
         if(target == 0){
