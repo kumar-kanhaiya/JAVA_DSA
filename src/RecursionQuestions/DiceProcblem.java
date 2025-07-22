@@ -14,4 +14,8 @@ public class DiceProcblem {
             dice(p+i,target-i);
         }
     }
+
+    // second approach adding in array list
+    // first we pass the list argument in the function or method
+
 }
