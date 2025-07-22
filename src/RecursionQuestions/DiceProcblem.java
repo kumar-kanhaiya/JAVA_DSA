@@ -29,4 +29,19 @@ public class DiceProcblem {
         }
         return list;
     }
+
+    // here is the second approach
+    public static ArrayList<String> dice3(String p , int target){
+        f(target == 0){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+        ArrayList<String> ans = new ArrayList<>();
+        for (int i = 1; i <=6&& i<= target ; i++) {
+            ans.addAll(dice3(p+i,target-i));
+        }
+        return ans;
+    }
+
 }
