@@ -1,6 +1,7 @@
 package BackTracking;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MazeProblem {
     public static void main(String[] args) {
@@ -11,11 +12,12 @@ public class MazeProblem {
         System.out.println("with obsticles");
         boolean[][] board ={
                 {true,true,true},
-                {true,false,true},
+                {true,true,true},
                 {true,true,true},
         };
-        pathWithObesticles("",board,0,0);
-
+//        pathWithObesticles("",board,0,0);
+        int[][] path = new int[board.length][board[0].length];
+        allPathPrint("",board,0,0,path,1);
     }
     static int count(int r , int c){
         if(r == 1 || c==1){
@@ -122,5 +124,40 @@ public class MazeProblem {
         // before the function is removed also remove the changed  that we have made
 
         maze[r][c] = true;
+    }
+
+    // question 6
+    public static void allPathPrint(String p , boolean[][] maze , int r , int c , int[][] path , int step){
+        if(r== maze.length - 1 && c == maze[0].length - 1){
+            path[r][c] = step;
+            for(int[] arr : path){
+                System.out.println(Arrays.toString(arr));
+            }
+            System.out.println();
+            return;
+        }
+        if(maze[r][c] == false){
+            return;
+        }
+        // i am con
+        maze[r][c]  = false;
+        path[r][c] = step;
+        if(r> maze.length-1){
+            allPathPrint(p+'D',maze,r+1,c,path,step+1);
+        }
+        if(c> maze[0].length - 1){
+            allPathPrint(p+'R',maze,r,c+1,path,step+1);
+        }
+        if(r>0){
+            allPathPrint(p+'U',maze,r-1,c,path,step+1);
+        }
+        if(c>0){
+            allPathPrint(p+'L',maze,r,c-1,path,step+1);
+        }
+        // this line is where the function is over
+        // before the function is removed also remove the changed  that we have made
+
+        maze[r][c] = true;
+        path[r][c] = 0;
     }
 }
