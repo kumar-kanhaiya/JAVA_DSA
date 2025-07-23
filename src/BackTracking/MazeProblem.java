@@ -10,5 +10,6 @@ public class MazeProblem {
             return 1;
         }
        return count(r,c-1) + count(r-1,c);
+
     }
 }
