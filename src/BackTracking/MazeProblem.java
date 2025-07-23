@@ -8,6 +8,12 @@ public class MazeProblem {
         path("",3,3);
         System.out.println(path2("",3,3));
         pathDiagonal("",3,3);
+        boolean[][] board ={
+                {true,true,true},
+                {true,false,true},
+                {true,true,true},
+        };
+        pathWithObesticles("",board,0,0);
     }
     static int count(int r , int c){
         if(r == 1 || c==1){
@@ -76,11 +82,11 @@ public class MazeProblem {
             return;
         }
         if(r<maze.length - 1){
-            pathWithObesticles(p + 'D' ,maze,r-1 , c);
+            pathWithObesticles(p + 'D' ,maze,r+1 , c);
 
         }
         if(c<maze[0].length - 1) {
-            pathWithObesticles(p + 'R', maze,r , c-1);
+            pathWithObesticles(p + 'R', maze,r , c+1);
         }
     }
 }
