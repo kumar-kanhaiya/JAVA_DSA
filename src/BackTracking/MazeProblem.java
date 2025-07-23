@@ -15,6 +15,7 @@ public class MazeProblem {
                 {true,true,true},
         };
         pathWithObesticles("",board,0,0);
+
     }
     static int count(int r , int c){
         if(r == 1 || c==1){
