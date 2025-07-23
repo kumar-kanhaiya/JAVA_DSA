@@ -6,7 +6,7 @@ public class MazeProblem {
     public static void main(String[] args) {
         System.out.println(count(3,3));
         path("",3,3);
-
+        System.out.println(path2("",3,3));
     }
     static int count(int r , int c){
         if(r == 1 || c==1){
