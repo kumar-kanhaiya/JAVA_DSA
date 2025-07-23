@@ -2,12 +2,15 @@ package BackTracking;
 
 public class NQuuens {
     public static void main(String[] args) {
-        queens()
+        int n = 4;
+        boolean[][] board = new boolean[n][n];
+        queens(board,0);
 
     }
     static int queens(boolean[][] board , int r ){
         if(r == board.length){
             display(board);
+            System.out.println();
             return 1;
         }
         int count = 0;
@@ -32,14 +35,14 @@ public class NQuuens {
             // minimum of row and col
             int maxLeft = Math.min(row,col);
             for (int j = 1; j <= maxLeft; j++) {
-                if(board[row-i][col-i]){
+                if(board[row-j][col-j]){
                     return false;
                 }
             }
             // diagonal right
             int maxRight = Math.min(row, board.length - col - 1);
             for (int j = 1; j <= maxRight; j++) {
-                if(board[row-i][col+i]){
+                if(board[row-j][col+j]){
                     return false;
                 }
             }
@@ -50,10 +53,10 @@ public class NQuuens {
         for(boolean[] row : board){
             for(boolean element : row){
                 if(element == true){
-                    System.out.println("Q");
+                    System.out.print("Q");
                 }
                 else{
-                    System.out.println("X");
+                    System.out.print("X");
                 }
             }
             System.out.println();
