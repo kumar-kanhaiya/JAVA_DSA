@@ -7,6 +7,7 @@ public class MazeProblem {
         System.out.println(count(3,3));
         path("",3,3);
         System.out.println(path2("",3,3));
+        pathDiagonal("",3,3);
     }
     static int count(int r , int c){
         if(r == 1 || c==1){
@@ -44,6 +45,25 @@ public class MazeProblem {
             ans.addAll(path2(p + 'R', r, c-1));
         }
         return ans;
+    }
+
+    // adding diagonal element
+    // in this there are total 3 recursive call
+
+    public static void pathDiagonal(String p , int r , int c ){
+        if(r==1 && c==1){
+            System.out.println(p);
+            return;
+        }
+        if(r>1){
+            pathDiagonal(p+'D',r-1,c);
+        }
+        if(r>1&& c>1){
+            pathDiagonal(p+'P',r-1,c-1);
+        }
+        if(c>1){
+            pathDiagonal(p+'R',r,c-1);
+        }
     }
 
 
