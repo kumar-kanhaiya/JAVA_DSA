@@ -49,6 +49,7 @@ public class MazeProblem {
 
     // adding diagonal element
     // in this there are total 3 recursive call
+    // lets denote diagonal with p
 
     public static void pathDiagonal(String p , int r , int c ){
         if(r==1 && c==1){
