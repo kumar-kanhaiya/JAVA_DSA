@@ -8,6 +8,7 @@ public class MazeProblem {
         path("",3,3);
         System.out.println(path2("",3,3));
         pathDiagonal("",3,3);
+        System.out.println("with obsticles");
         boolean[][] board ={
                 {true,true,true},
                 {true,false,true},
@@ -73,7 +74,28 @@ public class MazeProblem {
         }
     }
 
-    static void pathWithObesticles(String p,boolean[][] maze , int r , int c ){
+    static void pathWithObesticles(String p,boolean[][] maze , int r , int c ) {
+        if (r == maze.length - 1 && c == maze[0].length - 1) {
+            System.out.println(p);
+            return;
+        }
+        if (maze[r][c] == false) {
+            return;
+        }
+        if (r < maze.length - 1) {
+            pathWithObesticles(p + 'D', maze, r + 1, c);
+
+        }
+        if (c < maze[0].length - 1) {
+            pathWithObesticles(p + 'R', maze, r, c + 1);
+        }
+    }
+
+        // you are making some changes while going in below recursive call when you go outside the recursive call
+        //then those recursive call not be avaliable this is called backtracking
+
+
+    public static void allPath(String p , boolean[][] maze , int r , int c){
         if(r== maze.length - 1 && c == maze[0].length - 1){
             System.out.println(p);
             return;
@@ -81,12 +103,23 @@ public class MazeProblem {
         if(maze[r][c] == false){
             return;
         }
-        if(r<maze.length - 1){
-            pathWithObesticles(p + 'D' ,maze,r+1 , c);
+        // i am con
+        maze[r][c]  = false;
+        if(r> maze.length-1){
+            allPath(p+'D',maze,r+1,c);
+        }
+        if(c> maze[0].length - 1){
+            allPath(p+'R',maze,r,c+1);
+        }
+        if(r>0){
+            allPath(p+'U',maze,r-1,c);
+        }
+        if(c>0){
+            allPath(p+'L',maze,r,c-1);
+        }
+        // this line is where the function is over
+        // before the function is removed also remove the changed  that we have made
 
-        }
-        if(c<maze[0].length - 1) {
-            pathWithObesticles(p + 'R', maze,r , c+1);
-        }
+        maze[r][c] = true;
     }
 }
