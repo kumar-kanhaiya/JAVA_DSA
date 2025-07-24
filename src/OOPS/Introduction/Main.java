@@ -9,7 +9,7 @@ public class Main {
         // object is physical reality / occupies space and memory
 
         // .operator is used to get the value of argument
-
+        // A constructor define what happen when an object create .
     }
 }
 class Student {
