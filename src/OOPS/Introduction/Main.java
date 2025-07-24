@@ -4,6 +4,9 @@ public class Main {
     public static void main(String[] args) {
        Student student1 = new Student("Kanhaiya",96,5);
         System.out.println(student1);
+
+        // class is logical construct
+        // object is physical reality / occupies space and memory
     }
 }
 class Student {
