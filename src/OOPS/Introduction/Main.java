@@ -7,14 +7,17 @@ public class Main {
 
         // class is logical construct
         // object is physical reality / occupies space and memory
+
+        // .operator is used to get the value of argument
+
     }
 }
 class Student {
     String name;
-    int marks;
+    float marks;
     int rollNo;
 
-    public Student( String name,int marks, int rollNo) {
+    public Student( String name,float marks, int rollNo) {
         this.marks = marks;
         this.rollNo = rollNo;
         this.name = name;
