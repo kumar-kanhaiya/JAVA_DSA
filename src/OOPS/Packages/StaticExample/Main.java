@@ -12,7 +12,8 @@ public class Main {
         // it only access static data not access non- static data
 
         // you cant use this in the static method
-
+        // static block will only runs once , when the first obj is created
+        //i.e when the class is loaded for the first time ;
 
     }
     static void fun(){
