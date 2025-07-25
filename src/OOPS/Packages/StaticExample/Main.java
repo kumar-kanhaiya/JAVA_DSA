@@ -11,6 +11,8 @@ public class Main {
         // inside the static method you cannot use any non-static method /.
         // it only access static data not access non- static data
 
+        // you cant use this in the static method
+
 
     }
     static void fun(){
