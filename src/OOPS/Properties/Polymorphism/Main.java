@@ -7,6 +7,7 @@ public class Main {
     // types
     //1 compile time polymorphism / static polymorphism achieved by overloading via method overloading
     // 2 Dynamic polymorphism   / runtime achieved by method overriding .
+
     public static void main(String[] args) {
         Shapes shape = new Shapes();
         shape.area();
