@@ -6,7 +6,7 @@ public class CustomArraylist {
 
         private int[] data;
         private static int DEFAULT_SIZE = 10;
-        private int size = 0;
+        private int size = 0; // also working as index value
 
         public CustomArraylist(){
             this.data = new int[DEFAULT_SIZE];
@@ -32,6 +32,10 @@ public class CustomArraylist {
     private boolean isFull() {
             return size == data.length;
             
+    }
+    public int remove(){
+            int removed = data[--size];
+            return removed;
     }
 
     public static void main(String[] args) {
