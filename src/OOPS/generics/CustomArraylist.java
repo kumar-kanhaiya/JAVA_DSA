@@ -37,6 +37,13 @@ public class CustomArraylist {
             int removed = data[--size];
             return removed;
     }
+    public int get(int index){
+            return data[index];
+    }
+
+    public int size(){
+            return size;
+    }
 
     public static void main(String[] args) {
         ArrayList list = new ArrayList();
