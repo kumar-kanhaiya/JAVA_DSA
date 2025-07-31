@@ -10,6 +10,15 @@ public class CustomLinkedList {
     public  CustomLinkedList(){
         this.size = 0;
     }
+    public void insertFirst(int value){
+        Node node = new Node(value);
+        node.next = head;
+        head = node;
+
+        if(tail == null){
+            tail = head;
+        }
+    }
 
     private  class Node{
         private int value ;
