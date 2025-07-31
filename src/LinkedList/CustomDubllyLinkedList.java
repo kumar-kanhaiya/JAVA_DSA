@@ -19,10 +19,25 @@ public class CustomDubllyLinkedList {
     public void display(){
         Node node = head;
         while(node != null){
-            System.out.print(node.value + " <-> ");
+            System.out.print(node.value + " -> ");
             node = node.next;
         }
         System.out.println("END");
+    }
+
+    public void displayReverse(){
+        Node node = head;
+        Node last = null;
+        while(node != null){
+            last = node;
+            node = node.next;
+        }
+        System.out.println("Print in Reverse !! ");
+        while(last != null){
+            System.out.print(last.value + " -> ");
+            last = last.prev;
+        }
+        System.out.println("START");
     }
 
     private class Node{

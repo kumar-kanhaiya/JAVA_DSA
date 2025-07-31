@@ -9,6 +9,9 @@ public class Main {
         list.insertFirst(9);
         list.insertFirst(4);
         list.insertFirst(2);
+        System.out.println("from starting");
         list.display();
+        System.out.println("in reverse");
+        list.displayReverse();
     }
 }
