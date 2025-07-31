@@ -40,6 +40,7 @@ public class CustomLinkedList {
         if(tail == null){
             tail = head;
         }
+        size++;
 
     }
     public void insertLast(int value){
