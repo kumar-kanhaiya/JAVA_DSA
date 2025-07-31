@@ -10,6 +10,8 @@ public class Basic {
     list.insertFirst(7);
     list.insertFirst(14);
     list.insertFirst(10);
+    list.display();
+
 
     }
 }
