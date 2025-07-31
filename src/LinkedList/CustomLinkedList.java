@@ -63,6 +63,7 @@ public class CustomLinkedList {
         }
         Node pre = get(index -1);
         int val = pre.next.value;
+        pre.next = pre.next.next;
         return val;
     }
 
