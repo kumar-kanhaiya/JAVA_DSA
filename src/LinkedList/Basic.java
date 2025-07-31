@@ -11,6 +11,7 @@ public class Basic {
     list.insertFirst(14);
     list.insertFirst(10);
     list.insertLast(99);
+    list.insert(100,3);
     list.display();
 
 
