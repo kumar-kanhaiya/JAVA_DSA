@@ -54,6 +54,17 @@ public class CustomLinkedList {
         size++;
 
     }
+    public int delete(int index){
+        if(index == 0){
+            return deleteFirst();
+        }
+        if(index == size - 1){
+            deleteLast();
+        }
+        Node pre = get(index -1);
+        int val = pre.next.value;
+        return val;
+    }
 
     public void display(){
         Node temp = head;
