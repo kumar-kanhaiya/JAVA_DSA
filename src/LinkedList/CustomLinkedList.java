@@ -18,6 +18,15 @@ public class CustomLinkedList {
         if(tail == null){
             tail = head;
         }
+
+    }
+    public void display(){
+        Node temp = head;
+        while (temp!= null){
+            System.out.println(temp.value + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("END");
     }
 
     private  class Node{
