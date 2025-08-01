@@ -34,7 +34,16 @@ public class CircularLinkList {
         }
     }
 
+    public void delete(int val){
+        Node node = head;
+        if(node == null){return;}
+        if(node.val == val){
+            head = head.next;
+            tail.next = head;
+            return;
+        }
 
+    }
 
     private class Node{
         private int val;
