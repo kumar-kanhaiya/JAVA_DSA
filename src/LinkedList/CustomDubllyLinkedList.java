@@ -20,11 +20,23 @@ public class CustomDubllyLinkedList {
    public void insert(int after , int val ){
         Node p = find(after);
 
+        if(p == null){
+            System.out.println("does not exist");
+            return;
+        }
+        Node node = new Node(val);
+        node.next = p.next;
+        p.next = node;
+        node.prev = p;
+        if(node.next.prev != null ){
+            node.next.prev = node;
+        }
+
    }
 
    public Node find(int index){
         Node node = head;
-        while(node != head){
+        while(node != null){
             if(node.value == index){
                 return node;
             }
