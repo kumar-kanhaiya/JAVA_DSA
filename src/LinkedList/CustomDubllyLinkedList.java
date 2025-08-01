@@ -16,6 +16,15 @@ public class CustomDubllyLinkedList {
         head = node;
 
     }
+
+    public CustomDubllyLinkedList.Node get(int index){
+        CustomDubllyLinkedList.Node node = head;
+        for (int i = 0; i < index ; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
     public void insertLast(int value){
         Node node = new Node(value);
         Node last = head;
