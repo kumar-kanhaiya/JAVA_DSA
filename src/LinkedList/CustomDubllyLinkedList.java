@@ -30,6 +30,7 @@ public class CustomDubllyLinkedList {
         }
         last.next = node;
         node.prev = last;
+
     }
     public void display(){
         Node node = head;
