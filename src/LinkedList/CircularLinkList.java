@@ -24,6 +24,16 @@ public class CircularLinkList {
 
     }
 
+    public void display(){
+        Node node = head;
+        if(head != null){
+            do {
+                System.out.print(node.val + " -> ");
+                node = node.next;
+            }while(node != head);
+        }
+    }
+
 
 
     private class Node{
