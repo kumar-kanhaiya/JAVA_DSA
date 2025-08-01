@@ -17,13 +17,21 @@ public class CustomDubllyLinkedList {
 
     }
 
-    public CustomDubllyLinkedList.Node get(int index){
-        CustomDubllyLinkedList.Node node = head;
-        for (int i = 0; i < index ; i++) {
+   public void insert(int after , int val ){
+        Node p = find(after);
+
+   }
+
+   public Node find(int index){
+        Node node = head;
+        while(node != head){
+            if(node.value == index){
+                return node;
+            }
             node = node.next;
         }
-        return node;
-    }
+        return null;
+   }
 
     public void insertLast(int value){
         Node node = new Node(value);
@@ -41,26 +49,26 @@ public class CustomDubllyLinkedList {
         node.prev = last;
 
     }
-    public void insert(int val , int index){
-        if(index == 0){
-            insertFirst(val);
-            return;
-        }
-        if(index == size){
-            insertLast(val);
-            return;
-        }
-
-        CustomDubllyLinkedList.Node temp = head;
-        for (int i = 1; i < index ; i++) {
-            temp = temp.next;
-        }
-        Node node = new Node(val,temp.next);
-        temp.next = node;
-
-        size++;
-
-    }
+//    public void insert(int val , int index){
+//        if(index == 0){
+//            insertFirst(val);
+//            return;
+//        }
+//        if(index == size){
+//            insertLast(val);
+//            return;
+//        }
+//
+//        CustomDubllyLinkedList.Node temp = head;
+//        for (int i = 1; i < index ; i++) {
+//            temp = temp.next;
+//        }
+//        Node node = new Node(val,temp.next);
+//        temp.next = node;
+//
+//        size++;
+//
+//    }
     public void display(){
         Node node = head;
         while(node != null){
