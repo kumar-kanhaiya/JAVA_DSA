@@ -42,7 +42,14 @@ public class CircularLinkList {
             tail.next = head;
             return;
         }
-
+        do{
+            Node n = node.next;
+            if(n.val == val){
+                node.next = n.next;
+                break;
+            }
+            node = node.next;
+        }while(node!= head);
     }
 
     private class Node{
