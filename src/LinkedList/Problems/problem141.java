@@ -1,11 +1,7 @@
 package LinkedList.Problems;
 
 public class problem141 {
-
-
-
-
-      class ListNode {
+    class ListNode {
           int val;
           ListNode next;
          ListNode(int x) {
@@ -13,5 +9,9 @@ public class problem141 {
              next = null;
           }
       }
+
+    public boolean hasCycle(ListNode head) {
+        ListNode
+    }
 
 }
