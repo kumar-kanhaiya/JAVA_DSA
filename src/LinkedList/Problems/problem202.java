@@ -1,7 +1,7 @@
 package LinkedList.Problems;
 
 public class problem202 {
-    public boolean isHappy(int n) {
+    public static boolean isHappy(int n) {
         int slow = n;
         int fast = n;
         do {
@@ -15,7 +15,7 @@ public class problem202 {
         return false;
 
     }
-    public int findingMultiplicationOfDigit(int number ){
+    public static int findingMultiplicationOfDigit(int number ){
         int ans = 0;
         while(number > 0){
             int rem = number%10;
@@ -23,5 +23,9 @@ public class problem202 {
             number /= 10;
         }
         return ans;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isHappy(12));
     }
 }
