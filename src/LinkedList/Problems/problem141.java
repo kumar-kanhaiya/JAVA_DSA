@@ -1,7 +1,17 @@
 package LinkedList.Problems;
 
 public class problem141 {
-    public static void main(String[] args) {
 
-    }
+
+
+
+      class ListNode {
+          int val;
+          ListNode next;
+         ListNode(int x) {
+             val = x;
+             next = null;
+          }
+      }
+
 }
