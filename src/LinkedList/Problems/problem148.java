@@ -67,4 +67,8 @@ public class problem148 {
 
         return slow;
     }
+
+    // second approach
+
+
 }
