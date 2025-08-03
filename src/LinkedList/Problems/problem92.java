@@ -36,9 +36,12 @@ public class problem92 {
     }
     private ListNode get( ListNode head, int index){
         ListNode node = head;
-        for (int i = 0; i < index; i++) {
+        while(node.next!= null){
+            if(node.val == index){
+                return node;
+            }
             node = node.next;
         }
-        return node;
+        return null;
     }
 }
