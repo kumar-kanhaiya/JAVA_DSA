@@ -1,8 +1,18 @@
 package LinkedList.Problems;
 
 public class problem148 {
-      public class ListNode {
+    ListNode head;
+    ListNode tail;
+    int size;
+
+
+
+    public class ListNode {
+
       int val;
+        public ListNode get() {
+            return val;
+        }
       ListNode next;
       ListNode() {}
       ListNode(int val) {
