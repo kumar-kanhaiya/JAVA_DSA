@@ -66,7 +66,5 @@ public class problem148 {
 
 
         return slow;
-
-
     }
 }
