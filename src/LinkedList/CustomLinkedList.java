@@ -1,5 +1,7 @@
 package LinkedList;
 
+import LinkedList.Problems.problem148;
+
 public class CustomLinkedList {
 
     private Node head;
@@ -135,6 +137,45 @@ public class CustomLinkedList {
             this.next = next;
         }
 
+    }
+    public void bubbleSort(){
+        bubbleSort(size-1 , 0);
+    }
+    private void bubbleSort(int row , int coll){
+        if(row == 0){
+            return;
+        }
+        if(coll < row){
+            Node first = get(coll);
+            Node second  = get(coll+1);
+
+            if(first.value > second.value){
+                // swap
+                if(first == head){
+                    head = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+                else if(second == tail){
+
+                    Node prev = get(coll -1);
+                    prev.next = second;
+                    tail = first;
+                    first.next = null;
+                    second.next = tail;
+                }
+                else{
+                    Node prev = get(coll -1);
+                    prev.next = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+            }
+            bubbleSort(row, coll + 1);
+        }
+        else{
+            bubbleSort(row-1 , 0);
+        }
     }
 
 
