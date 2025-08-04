@@ -24,7 +24,22 @@ public class problem143 {
 
         }
         // we get the middle element then reverse the node
+        ListNode reversed = reverese(slow);
+        ListNode start = head;
+        ListNode prev = null;
+        ListNode end = reversed.next;
+        while(end!= null || start != slow){
+            ListNode temp = start.next;
+            start.next = end;
+            start = temp;
+            temp = end.next;
+            end.next = start;
+            end = temp;
+            start = start.next;
+            end = end.next;
+            temp = temp.next;
 
+        }
     }
     public ListNode reverese(ListNode head){
           ListNode present = head;
