@@ -15,38 +15,37 @@ public class problem143 {
       }
   }
     public void reorderList(ListNode head) {
-        ListNode slow = head ;
-        ListNode fast = head;
-        // finding the middle node
-        while(fast.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
-
-        }
+          if(head == null || head.next == null){
+              return;
+          }
+        ListNode mid = middleNode(head);
         // we get the middle element then reverse the node
-        ListNode reversed = reverese(slow);
-        ListNode start = head;
-        ListNode prev = null;
-        ListNode end = reversed.next;
-        while(end!= null || start != slow){
-            ListNode temp = start.next;
-            start.next = end;
-            start = temp;
-            temp = end.next;
-            end.next = start;
-            end = temp;
-            start = start.next;
-            end = end.next;
-            temp = temp.next;
+        ListNode hs = reverese(mid);
+        ListNode hf = head;
+        while(hs!= null && hf != null){
+            ListNode temp = hf.next;
+            hf.next = hs;
+            hf = temp;
+            temp = hs.next;
+            hs.next = hf;
+            hs = temp;
+
 
         }
+        if(hf != null){
+            hf.next = null;
+        }
+
     }
     public ListNode reverese(ListNode head){
+          if(head ==null){
+              return head;
+          }
           ListNode present = head;
           ListNode prev = null;
           ListNode next = present.next;
 
-          while (present.next != null ){
+          while (present != null ){
               present.next = prev;
               prev = present;
               present = next;
@@ -55,6 +54,18 @@ public class problem143 {
               }
           }
           return prev;
+    }
+    public ListNode middleNode(ListNode head) {
+          ListNode fast = head;
+        ListNode slow = head;
+
+
+        while (fast != null && fast.next != null) {
+
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 
 }
