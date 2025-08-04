@@ -14,6 +14,8 @@ public class problem143 {
           this.val = val; this.next = next;
       }
   }
+    public void reorderList(ListNode head) {
 
+    }
 
 }
