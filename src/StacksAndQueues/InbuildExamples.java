@@ -1,8 +1,6 @@
 package StacksAndQueues;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class InbuildExamples {
     public static void main(String[] args) {
@@ -34,5 +32,10 @@ public class InbuildExamples {
         System.out.println(queue.remove());
         System.out.println(queue.remove());
         System.out.println(queue.remove());
+
+
+        // Array Deque :- it is faster than linklist and stack
+        Deque<Integer> deque = new ArrayDeque<>();
+
     }
 }
