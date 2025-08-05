@@ -43,4 +43,11 @@ public class CustomStack {
         // in simple word
         return data[ptr--];
     }
+
+    public int peak() throws Exception{
+        if(isEmpty()){
+            throw new Exception("Cannot peak from an empty stack !!");
+        }
+        return data[ptr];
+    }
 }
