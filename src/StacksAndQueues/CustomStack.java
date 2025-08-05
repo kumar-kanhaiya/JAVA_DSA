@@ -33,9 +33,9 @@ public class CustomStack {
         return ptr == -1;
     }
 
-    public int pop() throws Exception{
+    public int pop() throws StackException{
         if(isEmpty()){
-            throw new Exception("Cannot pop from an empty stack ");
+            throw new StackException("Cannot pop from an empty stack ");
         }
 //        int removed = data[ptr];
 //        ptr--;
@@ -44,9 +44,9 @@ public class CustomStack {
         return data[ptr--];
     }
 
-    public int peak() throws Exception{
+    public int peak() throws StackException{
         if(isEmpty()){
-            throw new Exception("Cannot peak from an empty stack !!");
+            throw new StackException("Cannot peak from an empty stack !!");
         }
         return data[ptr];
     }
