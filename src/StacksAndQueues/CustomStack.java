@@ -23,7 +23,7 @@ public class CustomStack {
         return true;
     }
 
-    private boolean isFull() {
+    public boolean isFull() {
         // it means pointer is at last position
         return ptr == data.length - 1;
 
