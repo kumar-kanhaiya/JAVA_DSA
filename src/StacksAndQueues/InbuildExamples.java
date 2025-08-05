@@ -36,6 +36,10 @@ public class InbuildExamples {
 
         // Array Deque :- it is faster than linklist and stack
         Deque<Integer> deque = new ArrayDeque<>();
-
+        deque.add(59);
+        deque.addLast(99);;
+        deque.addFirst(1);
+        deque.add(85);
+        System.out.println(deque.removeFirst());
     }
 }
