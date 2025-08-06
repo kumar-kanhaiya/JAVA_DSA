@@ -50,9 +50,16 @@ public class CircularQueue {
     }
 
     public void display(){
-        for (int i = front; i <end ; i++) {
-            System.out.print(data[i] + " <- ");
+        if(isEmpty()){
+            System.out.println("EMPTY!!");
+            return;
         }
+        int i = front;
+        do{
+            System.out.print(data[i] + " -> ");
+            i++;
+            i %= data.length;
+        }while(front != end);
         System.out.println("END");
     }
 }
