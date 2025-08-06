@@ -1,83 +1,87 @@
-  JAVA_DSA
-A comprehensive collection of Java implementations for Data Structures & Algorithms (DSA). Ideal for learners preparing for coding interviews or leveling up in algorithmic programming.
+# JAVA_DSA
 
-🚀 Features
-Core Data Structures & Algorithms implemented in Java:
+A comprehensive collection of **Java implementations** for Data Structures & Algorithms (DSA). Ideal for learners preparing for coding interviews or improving algorithmic problem-solving skills.
 
-Arrays, Strings, LinkedLists
+## 🚀 Features
 
-Stacks, Queues, Trees, Graphs, Heaps, Tries
+- Java-based solutions for core DSA topics
+- Clean, modular, and beginner-friendly code
+- Covers:
+  - Arrays & Strings
+  - Linked Lists
+  - Stacks & Queues
+  - Trees & Graphs
+  - Sorting & Searching
+  - Recursion & Backtracking
+  - Dynamic Programming
+  - Greedy Algorithms
+- Interview-ready patterns and practice
 
-Hashing, Sorting & Searching Algorithms
+## 📁 Folder Structure
 
-Recursion, Dynamic Programming, Greedy Algorithms, Backtracking
-
-Structured practice problems grouped by topic with step-by-step solutions
-
-Interview-friendly coding patterns and best practices
-
-📂 Repository Structure
-Copy
-Edit
 JAVA_DSA/
 ├── arrays/
-│   ├── TwoSum.java
-│   └── ...
+├── strings/
 ├── linkedlists/
-│   ├── ReverseLinkedList.java
-│   └── ...
+├── stacks/
+├── queues/
 ├── trees/
-│   └── BinarySearchTree.java
 ├── graphs/
-├── dp/
 ├── sorting/
+├── searching/
 ├── recursion/
-└── README.md
-Each folder is organized by topic and contains multiple Java files demonstrating the relevant problem solutions.
+├── dp/
+├── greedy/
+└── ...
 
-📌 Getting Started
-Follow these steps to explore and test the code:
 
-Clone the repo:
+> Each folder contains multiple Java programs demonstrating key concepts or solving popular problems.
 
-bash
-Copy
-Edit
+## 🧑‍💻 Getting Started
+
+### Clone the repository
+
+```bash
 git clone https://github.com/kumar-kanhaiya/JAVA_DSA.git
 cd JAVA_DSA
-Explore the folder structure to navigate through topics.
 
-Compile & Run:
-
-bash
-Copy
-Edit
-javac path/to/YourClass.java
-java path.to.YourClass
-📌 Consider using an IDE (IntelliJ, Eclipse) for easier project navigation and execution.
+Run a file
+Use terminal or any IDE like IntelliJ, Eclipse, or VS Code:
+javac path/to/FileName.java
+java FileName
 
 🎯 Use Cases
-Practice platform for standardized DSA interview questions.
+* Practice DSA with Java
 
-A reference repo while learning Java-based implementations.
+* Prepare for technical interviews
 
-A blueprint for designing structured DSA repositories.
+* Learn Java syntax via problem-solving
 
-🌟 Contributions
-Improvements welcome! Feel free to:
+Reference repository for common problems (LeetCode, GFG, etc.)
 
-Add new problems or topics.
+🤝 Contributing
+Contributions are welcome!
 
-Improve existing implementations.
+* Fork this repo
 
-Report issues or request topic support.
+* Create a new branch: git checkout -b feature/your-feature
 
-Fork the repo
+* Commit your changes: git commit -m "Add feature"
 
-Create a branch like feature/<topic>
+* Push to your branch: git push origin feature/your-feature
 
-Commit the change and open a Pull Request
+* Open a Pull Request
 
-🗣️ Author
+You can contribute by:
+
+* Adding new problems
+
+* Improving code readability
+
+* Optimizing solutions
+
+* Fixing bugs or typos
+
+🙋‍♂️ Author
 Kanhaiya Kumar
-Focused on building strong programming foundations, especially in Java and DSA.
+GitHub: @kumar-kanhaiya
