@@ -24,5 +24,6 @@ public class DynamicStack extends CustomStack{
 
         // now its time to insert data
         return super.push(item);
+
     }
 }
