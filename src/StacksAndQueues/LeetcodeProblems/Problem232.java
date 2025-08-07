@@ -19,31 +19,28 @@ public class Problem232 {
         first.push(x);
     }
 
-    public int pop() throws Exception {
+    public int pop()  {
         while(!first.isEmpty()){
             second.push(first.pop());
         }
-        int removed = second.pop();
-        while(!second.isEmpty()){
-            first.push(second.pop());
-        }
-        return removed;
+
+
+        return second.pop();
     }
 
-    public int peek() throws Exception {
-        while(!first.isEmpty()){
+    public int peek()  {
+        if(second.isEmpty()){
+            while(!first.isEmpty()){
             second.push(first.pop());
+            }
         }
-        int peeked = second.peek();
-        while(!second.isEmpty()){
-            first.push(second.pop());
-        }
-        return peeked;
+
+        return second.peek();
 
     }
 
     public boolean empty() {
-        return first.isEmpty();
+        return first.isEmpty() && second.isEmpty();
     }
     }
 }
