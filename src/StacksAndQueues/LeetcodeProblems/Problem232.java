@@ -20,8 +20,12 @@ public class Problem232 {
     }
 
     public int pop()  {
-        while(!first.isEmpty()){
-            second.push(first.pop());
+        if(second.isEmpty()) {
+
+
+            while (!first.isEmpty()) {
+                second.push(first.pop());
+            }
         }
 
 
