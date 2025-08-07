@@ -18,9 +18,24 @@ public class problem84 {
                 }
                 stack.push(i);
         }
-
+        int i = heights.length;
+        while(!stack.isEmpty()){
+            max = getMax(heights , stack ,max , i);
+        }
 
         return max;
+    }
+    public static int getMax(int[] arr , Stack<Integer> stack , int max , int i){
+        int area;
+        int poped = stack.pop();
+        if(stack.isEmpty()){
+            area = arr[poped] * i;
+        }
+        else{
+            area = arr[poped] * (i-1 - stack.peek()) ;
+        }
+
+        return Math.max(max, area);
     }
 
 }
