@@ -15,20 +15,20 @@ public class problem20 {
             }
             else{
                 if(ch == ')'){
-                    if(stack.peek() != '(' || stack.isEmpty()){
+                    if(stack.isEmpty() || stack.pop() != '(' ){
                         return false;
                     }
                 }if(ch == ']'){
-                    if(stack.peek() != '[' || stack.isEmpty()){
+                    if(stack.isEmpty() || stack.pop() != '[' ){
                         return false;
                     }
                 }if(ch == '}'){
-                    if(stack.peek() != '{' || stack.isEmpty()){
+                    if(stack.isEmpty() || stack.pop() != '{' ){
                         return false;
                     }
                 }
             }
         }
-        return true;
+        return stack.isEmpty();
     }
 }
