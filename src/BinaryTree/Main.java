@@ -1,7 +1,13 @@
 package BinaryTree;
 
 public class Main {
-    public static void main(String[] args) {
+    private static class Node{
+        private int value;
+        Node left;
+        Node right;
 
+        public Node(int value){
+            this.value = value;
+        }
     }
 }
