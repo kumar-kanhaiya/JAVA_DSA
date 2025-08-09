@@ -2,8 +2,9 @@ package Tree;
 
 public class BinaryTree {
 
+    public BinaryTree(){
 
-
+    }
     private static class Node{
         private int value ;
         Node left;
@@ -13,4 +14,6 @@ public class BinaryTree {
             this.value = value;
         }
     }
+
+    private Node root ;
 }
