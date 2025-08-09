@@ -1,12 +1,15 @@
-package BinaryTree;
+package Tree;
 
-public class Main {
+public class BinaryTree {
+
+
+
     private static class Node{
-        private int value;
+        private int value ;
         Node left;
         Node right;
 
-        public Node(int value){
+        public Node(int value ){
             this.value = value;
         }
     }
