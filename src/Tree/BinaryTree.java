@@ -1,5 +1,7 @@
 package Tree;
 
+import java.util.Scanner;
+
 public class BinaryTree {
 
     public BinaryTree(){
@@ -16,4 +18,8 @@ public class BinaryTree {
     }
 
     private Node root ;
+    // insert element
+    public void populate(Scanner scanner){
+
+    }
 }
