@@ -26,6 +26,14 @@ public class BinaryTree {
         populate(scanner, root);
     }
     private void populate(Scanner scanner , Node node){
+        System.out.println("Dou you want to enter left of " + node.value);
+        boolean left = scanner.nextBoolean();
+        if(left){
+            System.out.println("Enter the value of left of " + node.value);
+            int value = scanner.nextInt();
+            node.left = new Node(value);
+            populate(scanner,node.left);
+        }
 
     }
 }
