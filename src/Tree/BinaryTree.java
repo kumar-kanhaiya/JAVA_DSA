@@ -59,4 +59,11 @@ public class BinaryTree {
         display(node.left , indent + "\t");
         display(node.right ,  indent + "\t");
     }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        BinaryTree tree = new BinaryTree();
+        tree.populate(scanner);
+        tree.display();
+    }
 }
