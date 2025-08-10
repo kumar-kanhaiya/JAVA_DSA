@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class BinaryTree {
 
+    // Tree is quite similar to the Linked List
+
     public BinaryTree(){
 
     }
@@ -43,5 +45,18 @@ public class BinaryTree {
             populate(scanner,node.right);
         }
 
+
+    }
+
+    public void display(){
+        display(root, " ");
+    }
+    private void display(Node node , String indent){
+        if(node == null){
+            return;
+        }
+        System.out.println(indent + node.value);
+        display(node.left , indent + "\t");
+        display(node.right ,  indent + "\t");
     }
 }
