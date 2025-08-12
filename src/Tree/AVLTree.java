@@ -72,7 +72,19 @@ public class AVLTree {
         return rotate(node);
     }
     private Node rotate(Node node){
-
+        if(height(node.left) - height(node.right) > 1 ){
+            // we know this is the case of left heavy
+            // it also have two cases :
+            if(height(node.left.left) - height(node.left.right) > 0){
+                // it is the case of left - left case
+                return rightRotate(node);
+            }
+            if(height(node.left.left) - height(node.left.right) < 0){
+                // it is the case of left - right case
+                node.left = leftRotate(node.left);
+                return rightRotate(node);
+            }
+        }
     }
 
     public boolean balanced() {
