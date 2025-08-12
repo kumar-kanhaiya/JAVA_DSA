@@ -101,6 +101,21 @@ public class AVLTree {
         return node;
     }
 
+    public Node rightRotate(Node p){
+        Node c = p.left;
+        Node t = c.right;
+        c.right = p;
+        p.left = t;
+
+        p.height = Math.max(height(p.left) , height(p.right) + 1);
+        c.height = Math.max(height(c.left) , height(c.right) + 1);
+
+        return c;
+    }
+    public Node leftRotate(Node node){
+
+    }
+
     public boolean balanced() {
         return balanced(root);
     }
