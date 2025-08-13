@@ -28,7 +28,26 @@ public class SegmentTree {
         // creating the tree by using this array
         this.root = constructTree(array, 0 , array.length - 1);
     }
-    public Node constructTree(int[] array , int startInterval , int endInterval){
+    private Node constructTree(int[] array , int start , int end){
+         if(start == end){
+             Node leaf = new Node(start , end);
+             leaf.data = array[start];
+             return leaf;
+         }
+
+         // create a Node with index you are at
+        Node node = new Node(start , end );
+
+         int mid = (start + end)/2;
+
+        node.left = this.constructTree(array ,start , mid);
+        node.right = this.constructTree(array , mid+1 , end);
+
+        // condition for return
+
+
+         node.data = node.left.data + node.right.data;
+         return node;
 
     }
 
