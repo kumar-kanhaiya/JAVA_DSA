@@ -66,8 +66,8 @@ public class SegmentTree {
         }
 
         // for current node
-        str = str + "Interval=[" + node.left.startInterval + "-" + node.left.endInterval + "] and data: " +
-                node.left.data + "=>";
+        str = str + "Interval=[" + node.startInterval + "-" + node.endInterval + "] and data: " +
+                node.data + "=>";
         if(node.right != null){
             str = str + "Interval=[" + node.right.startInterval + "-" + node.right.endInterval + "] and data: " + node.right.data;
         }
