@@ -51,4 +51,29 @@ public class SegmentTree {
 
     }
 
+    public void display(){
+        display(this.root);
+    }
+    private void display(Node node){
+        String str = "";
+
+        if(node.left != null){
+            str = str + "Interval=[" + node.left.startInterval + "-" + node.left.endInterval + "] and data: " +
+                    node.left.data + "=>";
+        }
+        else{
+            str =  str + "No left child";
+        }
+
+        // for current node
+        str = str + "Interval=[" + node.left.startInterval + "-" + node.left.endInterval + "] and data: " +
+                node.left.data + "=>";
+        if(node.right != null){
+            str = str + "Interval=[" + node.right.startInterval + "-" + node.right.endInterval + "] and data: " + node.right.data;
+        }
+        else{
+            str = str + "No right Child";
+        }
+    }
+
 }
