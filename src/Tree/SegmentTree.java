@@ -68,13 +68,13 @@ public class SegmentTree {
         // for current node
         str = str + "Interval=[" + node.startInterval + "-" + node.endInterval + "] and data: " + node.data + "<=";
         if(node.right != null){
-            str = str + "Interval=[" + node.right.startInterval + "-" + node.right.endInterval + "] and data: " + node.right.data  + "=>";
+            str = str + "Interval=[" + node.right.startInterval + "-" + node.right.endInterval + "] and data: " + node.right.data  ;
         }
         else{
             str = str + "No right Child";
 
         }
-        System.out.println(str);
+        System.out.println(str + '\n');
         // call recursion
         if(node.left != null){
             display(node.left);
