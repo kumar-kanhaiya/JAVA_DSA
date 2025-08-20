@@ -91,7 +91,38 @@ public class SegmentTree {
     }
 
     private int query(Node node , int qsi , int qei){
+        if(node.startInterval >=  qsi && node.endInterval <= qei){
+            // node is completely ling inside the queary
+            return node.data;
+        }
+        else if(node.startInterval > qei || node.endInterval <qsi){
+            // completely outside no contribution
+            return 0;
+        }
+        else{
+            // overlapping case
+            return this.query(node.left , qsi , qei) + query(node.right , qsi , qei);
+        }
 
+
+    }
+    // update
+    public int update(Node node,int index , int value ){
+        if(index >= node.startInterval && index <= node.endInterval){
+            if(index == node.startInterval && index == node.endInterval){
+                node.data = value;
+                return node.data;
+            }
+            else{
+                int lefAns = update(node.left , index , value);
+                int rightAns = update(node.right , index , value);
+
+                node.data = lefAns + rightAns;
+                return node.data;
+            }
+
+        }
+        return node.data;
     }
 
 }
