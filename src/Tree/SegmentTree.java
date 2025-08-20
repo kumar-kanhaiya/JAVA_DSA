@@ -82,6 +82,16 @@ public class SegmentTree {
         if(node.right != null){
             display(node.right);
         }
+
+
+    }
+    // query
+    public int query(int qsi , int qei){
+        return this.query(this.root , qsi , qei);
+    }
+
+    private int query(Node node , int qsi , int qei){
+
     }
 
 }
