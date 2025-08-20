@@ -15,5 +15,10 @@ public class Main {
         // string builder is not thread safe
 
         // Constructor - 2
+        StringBuffer s = new StringBuffer("kanhaiya kumar singh ");
+        // Constructor - 3
+        StringBuffer s3 = new StringBuffer(30);
+        // also have some properties which is used by .method
+
     }
 }
