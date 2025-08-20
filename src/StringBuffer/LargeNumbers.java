@@ -8,14 +8,15 @@ public class LargeNumbers {
         int b = 67;
 
         BigInteger A = BigInteger.valueOf(33);
-        BigInteger B = BigInteger.valueOf(338465465);
-        BigInteger C = BigInteger.valueOf("468454");
+        BigInteger B = BigInteger.valueOf(3384);
+        BigInteger C = new BigInteger("468454");
 
         // constant
         BigInteger D = BigInteger.ONE;
 
-
-
+        // Addition
+        BigInteger s = A.add(B);
+        System.out.println(s);
 
     }
 }
