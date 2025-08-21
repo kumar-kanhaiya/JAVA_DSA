@@ -1,5 +1,6 @@
 package FileHandling;
 
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 //import java.io.InputStream;
@@ -37,6 +38,16 @@ public class Main {
            System.out.println(e.getMessage());
 
         }
+
+
+       //byte to char stream and then reading char stream
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))){
+            System.out.println("You typed : "  + br.readLine());
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
 
     }
 }
