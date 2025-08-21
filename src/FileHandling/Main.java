@@ -1,10 +1,8 @@
 package FileHandling;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 //import java.io.InputStream;
-import java.io.InputStreamReader;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -58,7 +56,26 @@ public class Main {
         catch (IOException e){
             System.out.println(e.getMessage());
         }
+        // Output
+        OutputStream os = System.out;
+//        os.write(😒);
+
+        System.out.println();
+
+        try(OutputStreamWriter osw = new OutputStreamWriter(System.out)){
+            osw.write("Hello world ");
+            osw.write(97);
+            osw.write(10);
+            osw.write('A');
+            osw.write('\n');
+            char[] arr = "hello world".toCharArray();
+            osw.write(arr);
+            osw.write("😒");
 
 
+        }
+        catch(IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
