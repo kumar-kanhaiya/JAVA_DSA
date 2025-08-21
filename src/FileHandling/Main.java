@@ -49,5 +49,16 @@ public class Main {
         }
 
 
+        try(BufferedReader br = new BufferedReader(new FileReader("data.txt"))){
+            while(br.ready()){
+                System.out.println(br.readLine());
+            }
+
+        }
+        catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
+
     }
 }
