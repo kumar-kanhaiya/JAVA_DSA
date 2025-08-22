@@ -1,5 +1,7 @@
 package BinarySearchInterviewQuestion.BFS;
 
+import com.sun.source.tree.Tree;
+
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -32,6 +34,23 @@ public class Problem102 {
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
+
+        while(!queue.isEmpty()){
+            int levelSize = queue.size();
+            List<Integer> currentLevelList = new ArrayList<>(levelSize);
+            for (int i = 0; i <levelSize ; i++) {
+                TreeNode currentNode = queue.poll();
+                currentLevelList.add(currentNode.val);
+                if(currentNode.left != null){
+                    queue.offer(currentNode.left);
+                }
+                if(currentNode.right != null){
+                    queue.offer(currentNode.right);
+                }
+                result.add(currentLevelList);
+
+            }
+        }
 
 
         return result;
