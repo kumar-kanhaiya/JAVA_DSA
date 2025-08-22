@@ -1,6 +1,10 @@
 package BinarySearchInterviewQuestion.BFS;
 
+import javax.swing.tree.TreeNode;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Problem102 {
     /*
@@ -20,6 +24,16 @@ public class Problem102 {
      */
 
     public static List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
 
+        if(root == null){
+            return result;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+
+        return result;
     }
 }
