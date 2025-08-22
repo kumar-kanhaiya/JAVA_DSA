@@ -47,9 +47,10 @@ public class Problem102 {
                 if(currentNode.right != null){
                     queue.offer(currentNode.right);
                 }
-                result.add(currentLevelList);
+
 
             }
+            result.add(currentLevelList);
         }
 
 
