@@ -24,14 +24,15 @@ public class problem637 {
       }
 
     public static List<Double> averageOfLevels(TreeNode root) {
-          List<Double> result = new ArrayList<>();
+        List<Double> result = new ArrayList<>();
 
-          if(root == null){
-              return result;
-          }
+        if(root == null){
+            return result;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
+
         while(!queue.isEmpty()){
             int level = queue.size();
             double average = 0;
@@ -40,12 +41,13 @@ public class problem637 {
                 TreeNode currentNode = queue.poll();
                 average += currentNode.val;
                 if(currentNode.left != null){
-                    average += currentNode.left.val;
+                    queue.offer(currentNode.left);
                 }
                 if(currentNode.right != null){
-                    average += currentNode.right.val;
+                    queue.offer(currentNode.right);
                 }
             }
+            average = average/level;
             result.add(average);
         }
 
