@@ -1,12 +1,11 @@
 package BinarySearchInterviewQuestion;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Problem103 {
 //     Definition for a binary tree node.
+
+    //dequeue problem
       public class TreeNode {
           int val;
           TreeNode left;
@@ -26,37 +25,50 @@ public class Problem103 {
         if(root == null){
             return result;
         }
-        Queue<TreeNode> queue = new LinkedList<>();
+        Deque<TreeNode> queue = new LinkedList<>();
 
+        boolean reverse = false;
         queue.offer(root);
         while(!queue.isEmpty()){
             int level = queue.size();
-            List<Integer> customList  = new ArrayList<>(queue.size());
-            for (int i = 0; i <level ; i++) {
-                TreeNode customNode = queue.poll();
-                customList.add(customNode.val);
-                if(i%2==0){
-                    if(customNode.left != null){
-                        queue.offer(customNode.left);
+            List<Integer> currentLevel = new ArrayList<>(queue.size());
+            for(int i = 0 ; i< level ; i++) {
+
+
+                if (!reverse) {
+                    TreeNode currentNode = queue.pollFirst();
+                    currentLevel.add(currentNode.val);
+                    if (currentNode.left != null) {
+                        queue.addLast(currentNode.left);
+
                     }
-                    if(customNode.right != null){
-                        queue.offer(customNode.right);
-                    }
-                }
-                else{
-                    if(customNode.right != null){
-                        queue.offer(customNode.right);
-                    }
-                    if(customNode.left != null){
-                        queue.offer(customNode.left);
+                    if (currentNode.right != null) {
+                        queue.addLast(currentNode.right);
                     }
 
+
+                } else {
+                    TreeNode currentNode = queue.pollLast();
+                    currentLevel.add(currentNode.val);
+
+                    if (currentNode.right != null) {
+                        queue.addFirst(currentNode.right);
+                    }
+                    if (currentNode.left != null) {
+                        queue.addFirst(currentNode.left);
+
+                    }
                 }
+            }
+
+            reverse = !reverse;
+            result.add(currentLevel);
 
             }
-            result.add(customList);
-        }
         return result;
-    }
+
+        }
+
+
 
 }
