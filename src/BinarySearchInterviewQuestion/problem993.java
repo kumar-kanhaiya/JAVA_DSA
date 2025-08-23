@@ -80,7 +80,32 @@ public class problem993 {
           if(node.val == x){
               return node;
           }
+        TreeNode n = findNode(node.left , x);
+          if(n!= null){
+              return n;
+          }
+
+          return findNode(node.right , x);
 
     }
+
+    public boolean isSibling(TreeNode node , TreeNode x , TreeNode y){
+          if(node == null){
+              return false;
+          }
+          return((node.left == x && node.right == y) || (node.left == y && node.right == x) || isSibling(node.left , x , y ) || isSibling(node.right , x, y));
+      }
+
+
+      public boolean level(TreeNode node , TreeNode x , int level ){
+          if(node == null){
+              return false;
+          }
+
+          if(node == x){
+              return level;
+          }
+
+      }
 
 }
