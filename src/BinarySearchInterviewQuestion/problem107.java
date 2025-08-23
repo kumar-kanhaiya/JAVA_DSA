@@ -1,9 +1,8 @@
 package BinarySearchInterviewQuestion;
 
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import com.sun.source.tree.Tree;
+
+import java.util.*;
 
 public class problem107 {
 
@@ -27,45 +26,27 @@ public class problem107 {
         if(root == null){
             return result;
         }
-        Deque<TreeNode> queue = new LinkedList<>();
 
-        boolean reverse = false;
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()){
             int level = queue.size();
-            List<Integer> currentLevel = new ArrayList<>(queue.size());
-            for(int i = 0 ; i< level ; i++) {
+            List<Integer> customList = new ArrayList<>();
+
+            for(int i= 0 ; i< level ; i++) {
 
 
-                if (!reverse) {
-                    TreeNode currentNode = queue.pollFirst();
-                    currentLevel.add(currentNode.val);
-                    if (currentNode.left != null) {
-                        queue.addLast(currentNode.left);
-
-                    }
-                    if (currentNode.right != null) {
-                        queue.addLast(currentNode.right);
-                    }
-
-
-                } else {
-                    TreeNode currentNode = queue.pollLast();
-                    currentLevel.add(currentNode.val);
-
-                    if (currentNode.right != null) {
-                        queue.addFirst(currentNode.right);
-                    }
-                    if (currentNode.left != null) {
-                        queue.addFirst(currentNode.left);
-
-                    }
+                TreeNode currentNode = queue.poll();
+                customList.add(currentNode.val);
+                if(currentNode.left != null){
+                    queue.offer(currentNode.left);
                 }
+                if(currentNode.right != null){
+                    queue.offer(currentNode.right);
+                }
+
             }
-
-            reverse = !reverse;
-            result.add(0,currentLevel);
-
+            result.add(0,customList);
         }
         return result;
 
