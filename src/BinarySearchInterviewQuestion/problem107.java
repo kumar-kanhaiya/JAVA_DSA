@@ -21,22 +21,53 @@ public class problem107 {
           }
       }
 
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
 
         if(root == null){
             return result;
         }
-
         Deque<TreeNode> queue = new LinkedList<>();
+
+        boolean reverse = false;
         queue.offer(root);
-        boolean reverse = true;
         while(!queue.isEmpty()){
             int level = queue.size();
-            List<Integer> customList = new ArrayList<>();
-            TreeNode customNode = queue.poll()
+            List<Integer> currentLevel = new ArrayList<>(queue.size());
+            for(int i = 0 ; i< level ; i++) {
+
+
+                if (!reverse) {
+                    TreeNode currentNode = queue.pollFirst();
+                    currentLevel.add(currentNode.val);
+                    if (currentNode.left != null) {
+                        queue.addLast(currentNode.left);
+
+                    }
+                    if (currentNode.right != null) {
+                        queue.addLast(currentNode.right);
+                    }
+
+
+                } else {
+                    TreeNode currentNode = queue.pollLast();
+                    currentLevel.add(currentNode.val);
+
+                    if (currentNode.right != null) {
+                        queue.addFirst(currentNode.right);
+                    }
+                    if (currentNode.left != null) {
+                        queue.addFirst(currentNode.left);
+
+                    }
+                }
+            }
+
+            reverse = !reverse;
+            result.add(0,currentLevel);
 
         }
+        return result;
 
     }
 }
