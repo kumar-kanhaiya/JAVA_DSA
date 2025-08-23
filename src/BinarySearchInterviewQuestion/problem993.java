@@ -43,12 +43,21 @@ public class problem993 {
                 if(currentNode.right != null){
                     queue.offer(currentNode.right);
                 }
+                if(currentNode.left != null && currentNode.right != null){
+                    if((currentNode.left.val == x && currentNode.right.val == y) ||
+                            (currentNode.left.val == y && currentNode.right.val == x)){
+                        return false;  // same parent → not cousins
+                    }
+                }
+
 
                 if(checkX == true && checkY == true){
                     return true;
                 }
 
             }
+            checkX = false;
+            checkY = false;
         }
         return false;
     }
