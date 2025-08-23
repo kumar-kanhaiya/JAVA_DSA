@@ -97,14 +97,19 @@ public class problem993 {
       }
 
 
-      public boolean level(TreeNode node , TreeNode x , int level ){
+      public int level(TreeNode node , TreeNode x , int level ){
           if(node == null){
-              return false;
+              return 0;
           }
 
           if(node == x){
               return level;
           }
+          int l = level(node.left , x , level + 1);
+          if(l != 0){
+              return l;
+          }
+          return level(node.right , x , level + 1);
 
       }
 
