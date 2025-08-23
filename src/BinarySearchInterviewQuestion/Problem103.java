@@ -39,10 +39,16 @@ public class Problem103 {
                     if(customNode.left != null){
                         queue.offer(customNode.left);
                     }
+                    if(customNode.right != null){
+                        queue.offer(customNode.right);
+                    }
                 }
                 else{
                     if(customNode.right != null){
                         queue.offer(customNode.right);
+                    }
+                    if(customNode.left != null){
+                        queue.offer(customNode.left);
                     }
 
                 }
