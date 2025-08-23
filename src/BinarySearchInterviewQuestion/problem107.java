@@ -20,7 +20,7 @@ public class problem107 {
           }
       }
 
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
 
         if(root == null){
