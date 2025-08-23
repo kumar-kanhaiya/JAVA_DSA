@@ -28,16 +28,21 @@ class Node {
         if(root == null){
             return root;
         }
+        Node leftMost = root;
 
-        Queue<Node> queue = new LinkedList<>();
-        queue.offer(root);
-        while(!queue.isEmpty()){
-            int level = queue.size();
-            for (int i = 0; i <level ; i++) {
-                Node currentNode = queue.poll();
-                queue.add(currentNode.val);
+        while(leftMost.left != null){
+            Node current = leftMost;
+            while(current != null){
+                current.left.next = current.right;
+                if(current.next != null){
+                    current.right.next = current.next.left;
+                }
+                current = current.next;
             }
+            leftMost = leftMost.left;
+
         }
+        return root;
     }
 
 }
