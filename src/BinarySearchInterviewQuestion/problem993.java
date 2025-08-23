@@ -62,4 +62,25 @@ public class problem993 {
         return false;
     }
 
+    // Second Approach
+
+    public boolean isCousins2(TreeNode root , int x , int y ){
+          TreeNode xx = findNode(root, x);
+          TreeNode yy = findNode(root, y);
+
+          return ((level(root,xx,0) == level(root,yy,0)) && (!isSibling(root,xx,yy)));
+
+    }
+
+    public TreeNode findNode(TreeNode node , int x){
+          if(node == null){
+              return null;
+          }
+
+          if(node.val == x){
+              return node;
+          }
+
+    }
+
 }
