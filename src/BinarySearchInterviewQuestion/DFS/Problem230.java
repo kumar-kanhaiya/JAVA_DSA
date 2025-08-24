@@ -15,12 +15,27 @@ public class Problem230 {
               this.right = right;
           }
       }
+      int count = 0 ;
     public int kthSmallest(TreeNode root, int k) {
-          if(root == null){
-              return 0;
-          }
+        TreeNode ans = helper(root , k);
+        return ans.val;
 
+    }
+    public TreeNode helper(TreeNode root , int k){
+        if(root == null){
+            return null;
+        }
 
+        TreeNode left = helper(root.left,k);
+
+        if(left != null){
+            return left;
+        }
+        count++;
+        if(count == k){
+            return root;
+        }
+        return  helper(root.right , k);
     }
 
 }
