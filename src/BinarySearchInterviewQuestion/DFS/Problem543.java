@@ -1,5 +1,7 @@
 package BinarySearchInterviewQuestion.DFS;
 
+import BinarySearchInterviewQuestion.problem101;
+
 public class Problem543 {
 
 //     * Definition for a binary tree node.
@@ -15,8 +17,25 @@ public class Problem543 {
               this.right = right;
          }
       }
-    public int diameterOfBinaryTree(TreeNode root) {
 
+      // DFS is used in this problem
+      int diameter = 0;
+    public int diameterOfBinaryTree(TreeNode root){
+        height(root);
+        return diameter;
+    }
+
+
+    public int height(TreeNode node){
+        if(node == null){
+            return 0;
+        }
+
+        int leftHeight = height(node.left);
+        int rightHeight = height(node.right);
+
+
+        return Math.max(leftHeight,rightHeight) + 1;
     }
 
 }
