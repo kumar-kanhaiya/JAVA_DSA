@@ -15,6 +15,17 @@ public class Problem105 {
               this.right = right;
           }
       }
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+          if(preorder.length == 0){
+              return null;
+          }
 
+          int r = preorder[0];
+          int index = 0;
+        for (int i = 0; i < inorder.length ; i++) {
+
+        }
+
+    }
 
 }
