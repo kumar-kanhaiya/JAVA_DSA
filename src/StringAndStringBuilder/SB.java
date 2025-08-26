@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class SB {
     public static void main(String[] args) {
         StringBuilder builder = new StringBuilder();
-        builder.append("main things take time ");
+        builder.append("Main things take time ");
         System.out.println(builder);
 
         // string is palindrome or not
