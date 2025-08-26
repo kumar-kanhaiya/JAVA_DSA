@@ -17,4 +17,16 @@ public class  customHeap<T extends Comparable<T>> {
         list.set(first , list.get(second));
         list.set(second , temp);
     }
+
+    private int parent(int index){
+        return index/2;
+
+    }
+
+    private int right(int index ){
+        return index * 2 + 2;
+    }
+    private int left(int index){
+        return index* 2 + 1;
+    }
 }
