@@ -48,4 +48,17 @@ public class  customHeap<T extends Comparable<T>> {
         }
 
     }
+    public T remove() throws Exception{
+        if(list.isEmpty()){
+            throw new Exception("Removing from an empty heap  ");
+        }
+        T temp = list.get(0);
+
+        T last = list.remove(list.size() - 1);
+        if(!list.isEmpty()){
+            list.set(0,last);
+            downheap(0);
+        }
+        return temp;
+    }
 }
