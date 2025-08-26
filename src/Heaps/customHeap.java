@@ -29,4 +29,23 @@ public class  customHeap<T extends Comparable<T>> {
     private int left(int index){
         return index* 2 + 1;
     }
+
+    public void insert(T value){
+        list.add(value);
+        upheap(list.size() - 1);
+
+    }
+
+    private void  upheap(int index){
+        if(index == 0){
+            return;
+        }
+
+        int p = parent(index);
+        if(list.get(index).compareTo(list.get(p)) < 0){
+            swap(index , p);
+            upheap(p);
+        }
+
+    }
 }
