@@ -1,5 +1,7 @@
 package HashMaps;
 
+import java.util.HashMap;
+
 public class Main {
     public static void main(String[] args) {
         /*
@@ -32,8 +34,18 @@ public class Main {
         3. Universal Hashing
         h(k) = [(ak + b) % p] % m ;
         where a and b are random number which are belongs to 0 to p-1;
+        p is a large prime number ;
 
          */
+
+        HashMap<String,Integer> map = new HashMap();
+
+        map.put("kanhaiya",95);
+        map.put("sachin",85);
+        map.put("satyam",89);
+
+
+        System.out.println(map.get("kanhaiya"));
 
 
     }
