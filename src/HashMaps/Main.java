@@ -1,7 +1,11 @@
 package HashMaps;
 
+//import org.w3c.dom.Entity;
+
+//import javax.swing.text.html.parser.Entity;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.TreeMap;
 
 public class Main {
     public static void main(String[] args) {
@@ -57,7 +61,44 @@ public class Main {
         set.add(69);
         set.add(12);
         System.out.println(set);
-    }
 
+        TreeMap<String,Integer> mapp = new TreeMap<>();
+        map.put("kanhaiya",89);
+        map.put("shubham",75);
+        map.put("rajan" , 98);
+        System.out.println(mapp);
+    }
+    class mapUsingHash{
+        private Entity[] entities;
+        public mapUsingHash(){
+            entities = new Entity[100];
+        }
+
+        public void put(String key , String value){
+            int hash = Math.abs(key.hashCode() % entities.length);
+            entities[hash] = new Entity(key ,value); // overriding
+
+        }
+
+        public String get(String key ){
+            int hash = Math.abs(key.hashCode()% entities.length);
+            if(entities[hash] != null && entities[hash].key.equals(key) ){
+                return entities[hash].value;
+            }
+            return null;
+        }
+
+        private class Entity{
+            String key ;
+            String value;
+
+            public Entity(String key , String value){
+                this.key = key;
+                this.value = value;
+            }
+
+        }
+
+    }
 
 }
