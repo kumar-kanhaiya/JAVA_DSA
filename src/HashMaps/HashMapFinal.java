@@ -52,19 +52,67 @@ public class HashMapFinal<K,V> {
                 }
             }
         }
-        private class Entity{
-            String key ;
-            String value;
 
-        public Entity(String key , String value){
+        public V get(K key){
+            int hash = Math.abs(key.hashCode()% list.size());
+            LinkedList<Entity> entities = list.get(hash);
+            for(Entity entity : entities){
+                if(entity.key.equals(key)){
+                    return entity.value;
+                }
+            }
+            return null;
+        }
+
+        public void remove(K key){
+            int hash = Math.abs(key.hashCode()% list.size());
+            LinkedList<Entity> entities = list.get(hash);
+
+            Entity target = null;
+
+            for(Entity entity : entities){
+                if(entity.key.equals(key)){
+                    target = entity;
+                    break;
+                }
+            }
+            entities.remove(target);
+            size--;
+
+        }
+
+        public boolean containKey(K key){
+            return get(key) != null;
+        }
+
+        @Override
+        public String toString(){
+            StringBuilder builder = new StringBuilder();
+            builder.append("{");
+            for(LinkedList<Entity> entities : list){
+                for(Entity entity : entities){
+                    builder.append(entity.key);
+                    builder.append(" = ");
+                    builder.append(entity.value);
+                    builder.append(" , ");
+
+                }
+            }
+            builder.append("}");
+
+        }
+        private class Entity{
+            K key ;
+            V value;
+
+        public Entity( K key , V value){
 
             this.key = key;
             this.value = value;
         }
 
 
-
-    }
+  }
 
 
 }
