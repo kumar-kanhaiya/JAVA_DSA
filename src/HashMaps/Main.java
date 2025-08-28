@@ -1,6 +1,7 @@
 package HashMaps;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -47,6 +48,16 @@ public class Main {
 
         System.out.println(map.get("kanhaiya"));
 
-
+        HashSet<Integer> set = new HashSet<>();
+        set.add(12);
+        set.add(25);
+        set.add(36);
+        set.add(12);
+        set.add(75);
+        set.add(69);
+        set.add(12);
+        System.out.println(set);
     }
+
+
 }
