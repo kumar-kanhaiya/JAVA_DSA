@@ -43,32 +43,40 @@ public class Main {
 
          */
 
-        HashMap<String,Integer> map = new HashMap();
+//        HashMap<String,Integer> map = new HashMap();
+//
+//        map.put("kanhaiya",95);
+//        map.put("sachin",85);
+//        map.put("satyam",89);
+//
+//
+//        System.out.println(map.get("kanhaiya"));
+//
+//        HashSet<Integer> set = new HashSet<>();
+//        set.add(12);
+//        set.add(25);
+//        set.add(36);
+//        set.add(12);
+//        set.add(75);
+//        set.add(69);
+//        set.add(12);
+//        System.out.println(set);
+//
+//        TreeMap<String,Integer> mapp = new TreeMap<>();
+//        map.put("kanhaiya",89);
+//        map.put("shubham",75);
+//        map.put("rajan" , 98);
+//        System.out.println(mapp);
 
-        map.put("kanhaiya",95);
-        map.put("sachin",85);
-        map.put("satyam",89);
+        mapUsingHash map = new mapUsingHash();
 
+        map.put("mango","king of fruits");
+        map.put("apple","sweet red fruit");
+        map.put("Banana","rich in protein ");
 
-        System.out.println(map.get("kanhaiya"));
-
-        HashSet<Integer> set = new HashSet<>();
-        set.add(12);
-        set.add(25);
-        set.add(36);
-        set.add(12);
-        set.add(75);
-        set.add(69);
-        set.add(12);
-        System.out.println(set);
-
-        TreeMap<String,Integer> mapp = new TreeMap<>();
-        map.put("kanhaiya",89);
-        map.put("shubham",75);
-        map.put("rajan" , 98);
-        System.out.println(mapp);
+        System.out.println(map.get("Banana"));
     }
-    class mapUsingHash{
+    static class mapUsingHash{
         private Entity[] entities;
         public mapUsingHash(){
             entities = new Entity[100];
@@ -86,6 +94,13 @@ public class Main {
                 return entities[hash].value;
             }
             return null;
+        }
+
+        public void remove(String key){
+            int hash = Math.abs(key.hashCode()% entities.length);
+            if(entities[hash] != null && entities[hash].key.equals(key)){
+                entities[hash] = null;
+            }
         }
 
         private class Entity{
