@@ -85,22 +85,22 @@ public class HashMapFinal<K,V> {
             return get(key) != null;
         }
 
-        @Override
-        public String toString(){
-            StringBuilder builder = new StringBuilder();
-            builder.append("{");
-            for(LinkedList<Entity> entities : list){
-                for(Entity entity : entities){
-                    builder.append(entity.key);
-                    builder.append(" = ");
-                    builder.append(entity.value);
-                    builder.append(" , ");
-
-                }
-            }
-            builder.append("}");
-
-        }
+//        @Override
+//        public String toString(){
+//            StringBuilder builder = new StringBuilder();
+//            builder.append("{");
+//            for(LinkedList<Entity> entities : list){
+//                for(Entity entity : entities){
+//                    builder.append(entity.key);
+//                    builder.append(" = ");
+//                    builder.append(entity.value);
+//                    builder.append(" , ");
+//
+//                }
+//            }
+//            builder.append("}");
+//
+//        }
         private class Entity{
             K key ;
             V value;
