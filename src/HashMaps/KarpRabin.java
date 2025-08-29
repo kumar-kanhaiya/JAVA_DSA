@@ -41,7 +41,7 @@ public class KarpRabin {
         }
     }
 
-    public static void main(String[] args) {
-        karpRabin algo = new KarpRabin();
-    }
+//    public static void main(String[] args) {
+//        karpRabin algo = new KarpRabin();
+//    }
 }
