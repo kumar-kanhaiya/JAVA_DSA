@@ -1,6 +1,8 @@
 package SortingAlgo;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CountSort {
     public static void main(String[] args) {
@@ -40,5 +42,28 @@ public class CountSort {
             }
         }
         return max;
+    }
+
+    public static void countSortHas(int[] array ){
+        if(array == null || array.length <=1){
+            return;
+        }
+        int max = Arrays.stream(array).max().getAsInt();
+        int min = Arrays.stream(array).min().getAsInt();
+
+        Map<Integer,Integer> countMap = new HashMap<>();
+
+        for(int number : array){
+            countMap.put(number , countMap.getOrDefault(number , 0) + 1);
+        }
+
+        int index = 0;
+        for(int i = min ;i<= max ; i++){
+            int count = countMap.getOrDefault(i,0);
+            for(int j = 0 ; j < count ; j++){
+                array[index] = i;
+                index++;
+            }
+        }
     }
 }
