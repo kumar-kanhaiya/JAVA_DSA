@@ -1,4 +1,6 @@
-package Heaps;
+package HuffmanCode;
+import Heaps.customHeap;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -59,6 +61,46 @@ public class HuffmanCoder {
             minHeap.insert(newNode);
 
         }
+        Node ft = minHeap.remove();
+
+        this.encoder = new HashMap<>();
+        this.decoder = new HashMap<>();
+
+        this.initEncorderDecorder(ft , "");
+
+    }
+
+    private void initEncorderDecorder(Node node , String osf){
+        if(node == null){
+            return;
+        }
+        if(node.left == null && node.right == null){
+            this.encoder.put(node.data,osf);
+            this.decoder.put(osf , node.data);
+        }
+        initEncorderDecorder(node.left , osf+"0");
+        initEncorderDecorder(node.right, osf+"1");
+    }
+
+    public String encode(String source){
+        String ans = "";
+
+        for(int i =0 ; i < source.length();i++){
+            ans = ans+ encoder.get(source.charAt(i));
+        }
+        return ans;
+    }
+    public String decode(String codedString){
+        String key = "";
+        String ans = "";
+        for (int i = 0; i < codedString.length(); i++) {
+            key = key + codedString.charAt(i);
+            if(decoder.containsKey(key)){
+                ans = ans + decoder.get(key);
+                key = "";
+            }
+        }
+        return ans;
 
     }
 
