@@ -1,6 +1,7 @@
 package Heaps;
-
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class HuffmanCoder {
     HashMap<Character , String> encoder;
@@ -38,6 +39,27 @@ public class HuffmanCoder {
                 fmap.put(cc , 1);
             }
         }
+
+        Heap<Node> minHeap = new Heap<>();
+        Set<Map.Entry<Character , Integer>> entrySet = fmap.entrySet();
+
+        for(Map.Entry<Character , Integer> entry : entrySet){
+            Node node = new Node(entry.getKey() , entry.getValue());
+            minHeap.insert(node);
+        }
+
+        while(minHeap.size() != 1){
+            Node first = minHeap.remove();
+            Node second = minHeap.remove();
+
+            Node newNode = new Node('\0' , first.cost + second.cost);
+            newNode.left = first;
+            newNode.right = second;
+
+            minHeap.insert(newNode);
+
+        }
+
     }
 
 }
