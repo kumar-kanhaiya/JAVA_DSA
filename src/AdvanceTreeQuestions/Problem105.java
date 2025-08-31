@@ -1,5 +1,6 @@
 package AdvanceTreeQuestions;
 
+import java.time.chrono.MinguoDate;
 import java.util.HashMap;
 
 public class Problem105 {
@@ -21,7 +22,7 @@ public class Problem105 {
               this.right = right;
           }
       }
-      static int index = 0;
+//      static int index = 0;
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         HashMap<Integer , Integer> map = new HashMap<>();
@@ -30,16 +31,18 @@ public class Problem105 {
             map.put(inorder[i] , i );
         }
 
-        return helper(preorder , inorder , 0 , preorder.length - 1 , map);
+        int[] index = {0};
+
+        return helper(preorder , inorder , 0 , preorder.length - 1 , map , index);
     }
     public TreeNode helper(int[] preorder , int[] inorder , int left , int right ,
-                           HashMap<Integer , Integer>  map){
+                           HashMap<Integer , Integer>  map , int[]  index){
         if(left > right){
             return null;
         }
 
-        int current = preorder[index];
-        index++;
+        int current = preorder[index[0]];
+        index[0]++;
 
         TreeNode node = new TreeNode(current);
 
@@ -47,8 +50,10 @@ public class Problem105 {
             return node;
         }
 
-        node.left = helper(preorder , inorder , left , index - 1 , map);
-        node.right = helper(preorder , inorder , index+ 1 , right , map);
+        int inOrderIndex = map.get(current);
+
+        node.left = helper(preorder , inorder , left , inOrderIndex - 1 , map , index);
+        node.right = helper(preorder , inorder , inOrderIndex + 1 , right , map , index);
 
         return node;
     }
