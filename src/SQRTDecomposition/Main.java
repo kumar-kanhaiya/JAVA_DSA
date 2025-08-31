@@ -1,5 +1,7 @@
 package SQRTDecomposition;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         int[] array = {1,3,5,2,7,6,3,1,4,8};
@@ -17,12 +19,14 @@ public class Main {
             if(i % sqrt  == 0){
                 blocks_id++;
             }
-            blocks[blocks_id] = array[i];
+            blocks[blocks_id] += array[i];
         }
+        System.out.println(Arrays.toString(blocks));
 
-        // sum query
 
     }
+    // sum query
+
     public static int query(int[] blocks , int[] arr , int l , int r , int sqrt){
         int ans = 0 ;
 
@@ -46,5 +50,11 @@ public class Main {
 
 
         return ans;
+    }
+
+    public void update(int[] blocks , int[] arr , int i , int val , int sqrt){
+        int block_id = i/sqrt;
+        blocks[block_id] += (val- arr[i]);
+        arr[i] = val;
     }
 }
