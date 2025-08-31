@@ -13,8 +13,38 @@ public class Main {
         int[] blocks = new int[sqrt + 1];
 
         for (int i = 0; i < n ; i++) {
-
+            // new block is starting
+            if(i % sqrt  == 0){
+                blocks_id++;
+            }
+            blocks[blocks_id] = array[i];
         }
 
+        // sum query
+
+    }
+    public static int query(int[] blocks , int[] arr , int l , int r , int sqrt){
+        int ans = 0 ;
+
+        // left part
+        while(l%sqrt != 0 && l<r && l != 0  ){
+                ans += arr[l];
+                l++;
+        }
+
+        // middle part
+        while(l+sqrt <= r){
+            ans += blocks[l/sqrt];
+            l += sqrt;
+        }
+
+        // right part
+        while(l<= r){
+            ans += arr[l];
+            l++;
+        }
+
+
+        return ans;
     }
 }
