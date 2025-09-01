@@ -1,9 +1,6 @@
 package AdvanceTreeQuestions;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class Problem987 {
 
@@ -34,7 +31,37 @@ public class Problem987 {
 
         int coll = 0;
 
-        Queue< Map.Entry<TreeNode , Integer>
+        Queue< Map.Entry<TreeNode , Integer>> queue = new ArrayDeque<>();
+
+        Map<Integer, ArrayList<Integer>> map = new HashMap<>();
+
+        queue.offer(new AbstractMap.SimpleEntry<>(node , coll));
+        int min = 0 ;
+        int max = 0;
+
+        while(!queue.isEmpty()){
+            Map.Entry<TreeNode,Integer> removed = queue.poll();
+            node = removed.getKey();
+            coll = removed.getValue();
+
+            if(node != null){
+                if(!map.containsKey(coll)){
+                    map.put(coll , new ArrayList<Integer>());
+                }
+
+                map.get(coll).add(node.val);
+
+                min = Math.min(min , coll);
+                max = Math.max(max , coll);
+
+                queue.offer(new AbstractMap.SimpleEntry<>(node.left , coll - 1));
+                queue.offer(new AbstractMap.SimpleEntry<>(node.right , coll + 1));
+
+            }
+        }
+        for(int i = min ; i <= max ; i++){
+            ans.add(map.get(i));
+        }
 
         return ans;
     }
